@@ -1,4 +1,58 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar Gauge",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.6.0"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -15,8 +69,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
-  "iteration": 1580894963205,
+  "id": null,
+  "iteration": 1580899573494,
   "links": [],
   "panels": [
     {
@@ -42,7 +96,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 0,
       "description": "The number of authentication events raised by all instances during the interval.",
       "format": "none",
@@ -132,7 +186,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 0,
       "description": "The number of SSO events raised by all instances",
       "format": "none",
@@ -219,7 +273,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 0,
       "description": "The number fo all oauth tokens issued by all instances during the interval",
       "format": "none",
@@ -306,7 +360,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Indicates if all the instances are up and running",
       "format": "none",
       "gauge": {
@@ -354,13 +408,6 @@
       ],
       "repeat": "Instance",
       "repeatDirection": "v",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -410,7 +457,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Indicates if there were any log debugs detected on any instance",
       "format": "none",
@@ -509,7 +556,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Indicates if there were any log debugs detected on any instance",
       "format": "none",
@@ -610,13 +657,6 @@
       "id": 55,
       "panels": [],
       "repeat": "Instance",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "title": "Status",
       "type": "row"
     },
@@ -629,7 +669,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Indicates if the server is up and running",
       "format": "none",
       "gauge": {
@@ -677,13 +717,6 @@
       ],
       "repeat": null,
       "repeatDirection": "v",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -734,7 +767,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Indicates if there were any log debugs detected on any instance",
       "format": "none",
@@ -786,13 +819,6 @@
           "to": "100000"
         }
       ],
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -842,13 +868,6 @@
       "id": 61,
       "mode": "markdown",
       "options": {},
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "timeFrom": null,
       "timeShift": null,
       "title": "",
@@ -856,7 +875,7 @@
       "type": "text"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "gridPos": {
         "h": 8,
@@ -905,13 +924,6 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "v",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "targets": [
         {
           "expr": "cpu_usage{instance=\"$Instance\"}",
@@ -929,7 +941,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 8,
         "w": 5,
@@ -975,13 +987,6 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "v",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "targets": [
         {
           "expr": "sum(rate(jvm_memory_used{instance=\"$Instance\"}[1m]))",
@@ -998,7 +1003,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 8,
         "w": 5,
@@ -1041,13 +1046,6 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "v",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "targets": [
         {
           "expr": "http_server_request_time_sum{instance=\"$Instance\"}/http_server_request_time_count{instance=\"$Instance\"}",
@@ -1070,18 +1068,11 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 18
       },
       "id": 39,
       "panels": [],
       "repeat": "Instance",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "title": "Performance",
       "type": "row"
     },
@@ -1090,14 +1081,14 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 37
+        "y": 19
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1120,13 +1111,6 @@
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
@@ -1185,14 +1169,14 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 37
+        "y": 19
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1216,13 +1200,6 @@
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": true,
@@ -1320,14 +1297,14 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 45
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1354,13 +1331,6 @@
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
@@ -1670,14 +1640,14 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 45
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1704,13 +1674,6 @@
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "scopedVars": {
-        "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
@@ -1843,7 +1806,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 106
+        "y": 35
       },
       "id": 49,
       "panels": [],
@@ -1855,14 +1818,14 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 107
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 24,
@@ -1946,14 +1909,14 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 107
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2038,7 +2001,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -2046,7 +2009,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 115
+        "y": 44
       },
       "hiddenSeries": false,
       "id": 68,
@@ -2139,7 +2102,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 123
+        "y": 52
       },
       "id": 29,
       "panels": [],
@@ -2148,12 +2111,12 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 124
+        "y": 53
       },
       "id": 2,
       "links": [],
@@ -2253,12 +2216,8 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "tags": [],
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(up, instance)",
         "hide": 0,
         "includeAll": false,
@@ -2280,7 +2239,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
