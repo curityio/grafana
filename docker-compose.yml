@@ -1,0 +1,42 @@
+version: "3.7"
+services:
+  curity:
+    container_name: idsvr
+    environment:
+      PASSWORD: Secr3t
+    image: curity/idsvr-unstable:390125427d
+    ports:
+      - "6749:6749"
+      - "4466:4466"
+    networks:
+      demonetwork:
+        aliases:
+          - idsvr
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    ports:
+      - "9000:9000"
+    volumes:
+      - type: bind
+        source: ./prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+    networks:
+      demonetwork:
+        aliases:
+          - prometheus
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      demonetwork:
+        aliases:
+          - grafana
+
+networks:
+  demonetwork:
+    name: metrics-demo-net
