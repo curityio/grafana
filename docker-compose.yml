@@ -17,7 +17,7 @@ services:
     container_name: prometheus
     image: prom/prometheus
     ports:
-      - "9000:9000"
+      - "9090:9090"
     volumes:
       - type: bind
         source: ./prometheus.yml
