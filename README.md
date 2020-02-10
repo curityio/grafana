@@ -14,7 +14,7 @@ Check out [Getting Started with Prometheus](https://prometheus.io/docs/prometheu
 Check out [Getting Started with Grafana](https://grafana.com/docs/grafana/latest/guides/getting_started/)
 
 # Quickstart Guide
-If you just want to review the dashboard, consider to setup your environment using Docker. For that purpose a configuration file for Prometheus and a docker-compose file were added to the repository. Using docker-compose you can start the required containers with a single command.
+If you just want to review the dashboard, consider to setup your environment using Docker. For that purpose a configuration files for Prometheus and Grafana as well as a docker-compose file were added to the repository. Using docker-compose you can configure and start the required containers with a single command.
 Run the following command inside the repository to create an environment:
 
 ```
@@ -26,7 +26,8 @@ This will setup three containers with the necessary ports forwarded for each sys
 * prometheus
 * grafana
 
-The same names can be used in configuration files to refer to the applications and Docker deamon will handle the name resolution and routing.
+The same names are used in configuration files to refer to the applications and Docker daemon will handle the name resolution and routing.
+The systems are preconfigured. Just access Grafana with the default password (see [Grafana Configuration](https://grafana.com/docs/grafana/latest/installation/configuration/#admin-user)) and select "Curity Identity Server" from the list of recent dashboards.
 
 | Endpoint                       | Description                                                  |
 |--------------------------------|--------------------------------------------------------------|
@@ -35,16 +36,7 @@ The same names can be used in configuration files to refer to the applications a
 | http://localhost:9090/targets  | Endpoint to check status of targets configured in Prometheus |
 | http://localhost:3000          | Grafana Web UI                                               |
 
-
-1. Access Grafana through the web interface: http://localhost:3000
-1. Create a new datasource of type Prometheus.
-1. Enter the URL for your Prometheus instance (backend): http://prometheus:9090
-1. Test and save the configuration.
-1. Add this dashboard by importing the .json file in this repository.
-  1. On the left menu hover the dashboard icon and select manage (http://localhost:3000/dashboards).
-  1. Click on import.
-  1. Upload the .json file.
-1. Congratulations, you are ready to explore the dashboard for Curity Identity Server.
+If you have an existing installation of Curity Identity Server, Prometheus and Grafana, just add this Dashboard by importing [idsvr-dashboard.json](idsvr-dashboard.json).
 
 # Contributing
 
