@@ -20,7 +20,7 @@ services:
       - "9090:9090"
     volumes:
       - type: bind
-        source: ./prometheus.yml
+        source: ./config/prometheus/prometheus.yml
         target: /etc/prometheus/prometheus.yml
     networks:
       demonetwork:
