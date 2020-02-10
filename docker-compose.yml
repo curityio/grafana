@@ -32,6 +32,11 @@ services:
     image: grafana/grafana
     ports:
       - "3000:3000"
+    volumes:
+      - ./config/grafana/provisioning/:/etc/grafana/provisioning/
+      - type: bind
+        source: ./config/grafana/dashboard.json
+        target: /var/lib/grafana/dashboards/curity/idsvr-dashboard.json
     networks:
       demonetwork:
         aliases:

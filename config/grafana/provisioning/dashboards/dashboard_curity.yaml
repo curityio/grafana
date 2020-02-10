@@ -1,0 +1,12 @@
+apiVersion: 1
+
+providers:
+  - name: 'Curity AB'
+    folder: 'Curity AB'
+    type: file
+    disableDeletion: true
+    editable: true
+    updaterIntervalSeconds: 15
+    allowUiUpdates: true
+    options:
+        path: /var/lib/grafana/dashboards/curity
