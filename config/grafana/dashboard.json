@@ -15,35 +15,1529 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 2,
+  "iteration": 1581587867372,
   "links": [],
   "panels": [
     {
+      "collapsed": false,
+      "datasource": "Prometheus",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 31,
+      "panels": [],
+      "title": "Summary",
+      "type": "row"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Prometheus",
+      "decimals": 0,
+      "description": "The number of authentication events raised by all instances during the interval.",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 0,
+        "y": 1
+      },
+      "id": 33,
+      "interval": "",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "maxPerRow": 3,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.0",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "repeat": null,
+      "repeatDirection": "v",
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "sum(authentication_login)",
+          "legendFormat": "{{acr}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Authentications",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "delta"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Prometheus",
+      "decimals": 0,
+      "description": "The number of SSO events raised by all instances during the interval",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 3,
+        "y": 1
+      },
+      "id": 45,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.0",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "sum(authentication_sso)",
+          "legendFormat": "{{acr}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "SSO",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "delta"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Prometheus",
+      "decimals": 0,
+      "description": "The number fo all oauth tokens issued by all instances during the interval",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 6,
+        "y": 1
+      },
+      "id": 47,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.0",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "sum(oauth_token_issued)",
+          "legendFormat": "{{token_type}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Tokens Issued",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "delta"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#d44a3a",
+        "rgba(237, 129, 40, 0.89)",
+        "#299c46"
+      ],
+      "datasource": "Prometheus",
+      "description": "Indicates if all the instances are up and running",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 9,
+        "y": 1
+      },
+      "id": 63,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.0",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "repeat": null,
+      "repeatDirection": "v",
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "min(up)",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "1,1",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Status",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Down",
+          "value": "null"
+        },
+        {
+          "op": "=",
+          "text": "Down",
+          "value": "0"
+        },
+        {
+          "op": "=",
+          "text": "OK",
+          "value": "1"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "#FF9830",
+        "#F2495C"
+      ],
+      "datasource": "Prometheus",
+      "decimals": null,
+      "description": "Indicates if there were any error logs detected on any of the instances",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 12,
+        "y": 1
+      },
+      "id": 69,
+      "interval": "",
+      "links": [],
+      "mappingType": 2,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.0",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "0",
+          "text": "OK",
+          "to": "0"
+        },
+        {
+          "from": "1",
+          "text": "ERROR",
+          "to": "100000"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "ceil(rate(log4j2_appender_total{level=\"error\", level=\"fatal\"}[1m]))",
+          "format": "time_series",
+          "hide": false,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "1,1",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Error",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "OK",
+          "value": "null"
+        },
+        {
+          "op": "=",
+          "text": "Debug Log",
+          "value": ">1"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "#FF9830",
+        "#F2495C"
+      ],
+      "datasource": "Prometheus",
+      "decimals": null,
+      "description": "Indicates if there were any debug or trace logs detected on any of the instances",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 15,
+        "y": 1
+      },
+      "id": 67,
+      "interval": "",
+      "links": [],
+      "mappingType": 2,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.0",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "0",
+          "text": "Disabled",
+          "to": "0"
+        },
+        {
+          "from": "1",
+          "text": "Enabled",
+          "to": "100000"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\"}[5m])))",
+          "format": "time_series",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "1,1",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Debug",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "OK",
+          "value": "null"
+        },
+        {
+          "op": "=",
+          "text": "Debug Log",
+          "value": ">1"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "collapsed": true,
+      "datasource": "Prometheus",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 55,
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "#d44a3a",
+            "rgba(237, 129, 40, 0.89)",
+            "#299c46"
+          ],
+          "datasource": "Prometheus",
+          "description": "Indicates if the server is up and running",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 0,
+            "y": 6
+          },
+          "id": 53,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "options": {},
+          "pluginVersion": "6.6.0",
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "repeat": null,
+          "repeatDirection": "v",
+          "scopedVars": {
+            "Instance": {
+              "selected": false,
+              "text": "idsvr-runtime:4466",
+              "value": "idsvr-runtime:4466"
+            }
+          },
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false,
+            "ymax": null,
+            "ymin": null
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "expr": "up{instance=\"$Instance\"}",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "1,1",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Status",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "Down",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "Down",
+              "value": "0"
+            },
+            {
+              "op": "=",
+              "text": "OK",
+              "value": "1"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "#299c46",
+            "#FF9830",
+            "#F2495C"
+          ],
+          "datasource": "Prometheus",
+          "decimals": null,
+          "description": "Indicates if there were any error logs detected",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 3,
+            "y": 6
+          },
+          "id": 70,
+          "interval": "",
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "options": {},
+          "pluginVersion": "6.6.0",
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "OK",
+              "to": "0"
+            },
+            {
+              "from": "1",
+              "text": "ERROR",
+              "to": "100000"
+            }
+          ],
+          "scopedVars": {
+            "Instance": {
+              "selected": false,
+              "text": "idsvr-runtime:4466",
+              "value": "idsvr-runtime:4466"
+            }
+          },
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false,
+            "ymax": null,
+            "ymin": null
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"error|fatal\", instance=~\"$Instance\"}[1m])))",
+              "format": "time_series",
+              "hide": false,
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "1,1",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Error",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "OK",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "Debug Log",
+              "value": ">1"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "#299c46",
+            "#FF9830",
+            "#F2495C"
+          ],
+          "datasource": "Prometheus",
+          "decimals": null,
+          "description": "Indicates if there were any debug or trace logs detected on the instance",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 6,
+            "y": 6
+          },
+          "id": 51,
+          "interval": "",
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "options": {},
+          "pluginVersion": "6.6.0",
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Disabled",
+              "to": "0"
+            },
+            {
+              "from": "1",
+              "text": "Enabled",
+              "to": "100000"
+            }
+          ],
+          "scopedVars": {
+            "Instance": {
+              "selected": false,
+              "text": "idsvr-runtime:4466",
+              "value": "idsvr-runtime:4466"
+            }
+          },
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false,
+            "ymax": null,
+            "ymin": null
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\", instance=~\"$Instance\"}[1m])))",
+              "format": "time_series",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "1,1",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Debug",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "OK",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "Debug Log",
+              "value": ">1"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "datasource": "Prometheus",
+          "description": "Shows the number of log entries by their type",
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 10
+          },
+          "id": 2,
+          "links": [],
+          "options": {
+            "displayMode": "lcd",
+            "fieldOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "mappings": [
+                  {
+                    "id": 0,
+                    "op": "=",
+                    "text": "N/A",
+                    "type": 1,
+                    "value": "null"
+                  }
+                ],
+                "max": 100,
+                "min": 0,
+                "nullValueMode": "connected",
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "blue",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "none"
+              },
+              "overrides": [],
+              "values": false
+            },
+            "orientation": "horizontal",
+            "showUnfilled": true
+          },
+          "pluginVersion": "6.6.0",
+          "scopedVars": {
+            "Instance": {
+              "selected": false,
+              "text": "idsvr-runtime:4466",
+              "value": "idsvr-runtime:4466"
+            }
+          },
+          "targets": [
+            {
+              "expr": "log4j2_appender_total",
+              "format": "time_series",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "instant": false,
+              "intervalFactor": 1,
+              "legendFormat": "{{level}}@{{instance}}",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Logs",
+          "type": "bargauge"
+        }
+      ],
+      "repeat": "Instance",
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr-runtime:4466",
+          "value": "idsvr-runtime:4466"
+        }
+      },
+      "title": "Status $Instance",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": "Prometheus",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 72,
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "#d44a3a",
+            "rgba(237, 129, 40, 0.89)",
+            "#299c46"
+          ],
+          "datasource": "Prometheus",
+          "description": "Indicates if the server is up and running",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 0,
+            "y": 6
+          },
+          "id": 73,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "options": {},
+          "pluginVersion": "6.6.0",
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "repeat": null,
+          "repeatDirection": "v",
+          "repeatIteration": 1581587867372,
+          "repeatPanelId": 53,
+          "repeatedByRow": true,
+          "scopedVars": {
+            "Instance": {
+              "selected": false,
+              "text": "idsvr:4466",
+              "value": "idsvr:4466"
+            }
+          },
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false,
+            "ymax": null,
+            "ymin": null
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "expr": "up{instance=\"$Instance\"}",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "1,1",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Status",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "Down",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "Down",
+              "value": "0"
+            },
+            {
+              "op": "=",
+              "text": "OK",
+              "value": "1"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "#299c46",
+            "#FF9830",
+            "#F2495C"
+          ],
+          "datasource": "Prometheus",
+          "decimals": null,
+          "description": "Indicates if there were any error logs detected",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 3,
+            "y": 6
+          },
+          "id": 74,
+          "interval": "",
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "options": {},
+          "pluginVersion": "6.6.0",
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "OK",
+              "to": "0"
+            },
+            {
+              "from": "1",
+              "text": "ERROR",
+              "to": "100000"
+            }
+          ],
+          "repeatIteration": 1581587867372,
+          "repeatPanelId": 70,
+          "repeatedByRow": true,
+          "scopedVars": {
+            "Instance": {
+              "selected": false,
+              "text": "idsvr:4466",
+              "value": "idsvr:4466"
+            }
+          },
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false,
+            "ymax": null,
+            "ymin": null
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"error|fatal\", instance=~\"$Instance\"}[1m])))",
+              "format": "time_series",
+              "hide": false,
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "1,1",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Error",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "OK",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "Debug Log",
+              "value": ">1"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "#299c46",
+            "#FF9830",
+            "#F2495C"
+          ],
+          "datasource": "Prometheus",
+          "decimals": null,
+          "description": "Indicates if there were any debug or trace logs detected on the instance",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 6,
+            "y": 6
+          },
+          "id": 75,
+          "interval": "",
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "options": {},
+          "pluginVersion": "6.6.0",
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Disabled",
+              "to": "0"
+            },
+            {
+              "from": "1",
+              "text": "Enabled",
+              "to": "100000"
+            }
+          ],
+          "repeatIteration": 1581587867372,
+          "repeatPanelId": 51,
+          "repeatedByRow": true,
+          "scopedVars": {
+            "Instance": {
+              "selected": false,
+              "text": "idsvr:4466",
+              "value": "idsvr:4466"
+            }
+          },
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false,
+            "ymax": null,
+            "ymin": null
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\", instance=~\"$Instance\"}[1m])))",
+              "format": "time_series",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "1,1",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Debug",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "OK",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "Debug Log",
+              "value": ">1"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "datasource": "Prometheus",
+          "description": "Shows the number of log entries by their type",
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 10
+          },
+          "id": 76,
+          "links": [],
+          "options": {
+            "displayMode": "lcd",
+            "fieldOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "mappings": [
+                  {
+                    "id": 0,
+                    "op": "=",
+                    "text": "N/A",
+                    "type": 1,
+                    "value": "null"
+                  }
+                ],
+                "max": 100,
+                "min": 0,
+                "nullValueMode": "connected",
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "blue",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "none"
+              },
+              "overrides": [],
+              "values": false
+            },
+            "orientation": "horizontal",
+            "showUnfilled": true
+          },
+          "pluginVersion": "6.6.0",
+          "repeatIteration": 1581587867372,
+          "repeatPanelId": 2,
+          "repeatedByRow": true,
+          "scopedVars": {
+            "Instance": {
+              "selected": false,
+              "text": "idsvr:4466",
+              "value": "idsvr:4466"
+            }
+          },
+          "targets": [
+            {
+              "expr": "log4j2_appender_total",
+              "format": "time_series",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "instant": false,
+              "intervalFactor": 1,
+              "legendFormat": "{{level}}@{{instance}}",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Logs",
+          "type": "bargauge"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": 1581587867372,
+      "repeatPanelId": 55,
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
+      "title": "Status $Instance",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "datasource": "Prometheus",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 39,
+      "panels": [],
+      "repeat": null,
+      "title": "Performance",
+      "type": "row"
+    },
+    {
       "aliasColors": {},
-      "bars": true,
+      "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "description": "Shows the CPU usage in percent",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 8
       },
       "hiddenSeries": false,
-      "id": 23,
+      "id": 4,
       "legend": {
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "max": false,
+        "max": true,
         "min": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
-      "lines": false,
+      "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
@@ -55,15 +1549,13 @@
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": true,
+      "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(authentication_login[30s])",
-          "format": "time_series",
+          "expr": "cpu_usage{instance=~\"$Instance\"}",
           "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "{{acr}}",
+          "legendFormat": "CPU Usage@{{instance}}",
           "refId": "A"
         }
       ],
@@ -71,7 +1563,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Login",
+      "title": "CPU",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -87,7 +1579,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "percentunit",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -110,32 +1602,34 @@
     },
     {
       "aliasColors": {},
-      "bars": true,
+      "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "description": "Shows the memory usage in bytes",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 0
+        "y": 8
       },
       "hiddenSeries": false,
-      "id": 24,
+      "id": 6,
       "legend": {
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "max": false,
+        "max": true,
         "min": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
-      "lines": false,
+      "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -143,16 +1637,20 @@
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": true,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(authentication_sso[30s])",
+          "expr": "rate(jvm_memory_used{instance=~\"$Instance\"}[1m])",
+          "format": "time_series",
           "hide": false,
+          "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{acr}}",
+          "legendFormat": "{{memory_area}} {{memory_id}}@{{instance}}",
           "refId": "A"
         }
       ],
@@ -160,7 +1658,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "SSO",
+      "title": "Memory",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -176,7 +1674,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "decbytes",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -213,7 +1711,7 @@
             },
             "query": {
               "params": [
-                "B",
+                "A",
                 "5m",
                 "now"
               ]
@@ -239,26 +1737,27 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "description": "Shows the time in seconds that it takes to process an HTTP request. This includes requests to admin and runtime nodes.",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 15,
       "legend": {
-        "alignAsTable": false,
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "max": false,
+        "max": true,
         "min": false,
         "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -278,11 +1777,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (http_method) (rate(http_server_request_time_sum[1m])) / sum by (http_method) (rate(http_server_request_time_count[1m]))",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "{{http_method}}",
-          "refId": "B"
+          "expr": "rate(http_server_request_time_sum{instance=~\"$Instance\"}[1m])/rate(http_server_request_time_count{instance=~\"$Instance\"}[1m])",
+          "format": "time_series",
+          "legendFormat": "HTTP requests@{{instance}}",
+          "refId": "A"
         }
       ],
       "thresholds": [
@@ -584,26 +2082,27 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "description": "Shows the time in seconds that it takes to process database queries.",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 8
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 25,
       "legend": {
-        "alignAsTable": false,
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "max": false,
+        "max": true,
         "min": false,
         "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -623,73 +2122,73 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (dap_id) (rate(datasource_account_sum[1m])) / sum by (dap_id) (rate(datasource_account_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_account_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_account_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "account",
+          "legendFormat": "account@{{instance}}",
           "refId": "B"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_attribute_sum[1m])) / sum by (http_method) (rate(datasource_attribute_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_attribute_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_attribute_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "attribute",
+          "legendFormat": "attribute@{{instance}}",
           "refId": "A"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_bucket_sum[1m])) / sum by (dap_id) (rate(datasource_bucket_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_bucket_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_bucket_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "bucket",
+          "legendFormat": "bucket@{{instance}}",
           "refId": "C"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_credential_sum[1m])) / sum by (dap_id) (rate(datasource_credential_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_credential_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_credential_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "credential",
+          "legendFormat": "credential@{{instance}}",
           "refId": "D"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_dcr_sum[1m])) / sum by (dap_id) (rate(datasource_dcr_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_dcr_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_dcr_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "DCR",
+          "legendFormat": "DCR@{{instance}}",
           "refId": "E"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_delegation_sum[1m])) / sum by (dap_id) (rate(datasource_delegation_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_delegation_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_delegation_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "delegation",
+          "legendFormat": "delegation@{{instance}}",
           "refId": "F"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_device_sum[1m])) / sum by (dap_id) (rate(datasource_device_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_device_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_device_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "device",
+          "legendFormat": "device@{{instance}}",
           "refId": "G"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_nonce_sum[1m])) / sum by (dap_id) (rate(datasource_nonce_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_nonce_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_nonce_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "nonce",
+          "legendFormat": "nonce@{{instance}}",
           "refId": "H"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_session_sum[1m])) / sum by (dap_id) (rate(datasource_session_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_session_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_session_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "session",
+          "legendFormat": "session@{{instance}}",
           "refId": "I"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_token_sum[1m])) / sum by (dap_id) (rate(datasource_token_count[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_token_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_token_count{instance=~\"$Instance\"}[1m]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "token",
+          "legendFormat": "token@{{instance}}",
           "refId": "J"
         }
       ],
@@ -699,7 +2198,8 @@
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 0.8
+          "value": 0.8,
+          "yaxis": "left"
         }
       ],
       "timeFrom": null,
@@ -743,29 +2243,139 @@
       }
     },
     {
+      "collapsed": false,
+      "datasource": "Prometheus",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 49,
+      "panels": [],
+      "repeat": null,
+      "title": "Authentication",
+      "type": "row"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "description": "Shows the rate of SSO events.",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 16
+        "y": 25
       },
       "hiddenSeries": false,
-      "id": 4,
+      "id": 24,
       "legend": {
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
+        "max": true,
+        "min": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(authentication_sso{instance=~\"$Instance\"}[1m])",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "legendFormat": "{{acr}}@{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "SSO Rate",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "description": "Shows the rate of login events.",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 25
+      },
+      "hiddenSeries": false,
+      "id": 23,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
         "max": false,
         "min": false,
-        "show": false,
+        "rightSide": false,
+        "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -783,9 +2393,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "cpu_usage",
+          "expr": "rate(authentication_login{instance=\"$Instance\"}[1m])",
+          "format": "time_series",
           "hide": false,
-          "legendFormat": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{acr}}@{{instance}}",
           "refId": "A"
         }
       ],
@@ -793,9 +2405,9 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU",
+      "title": "Login Rate",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -809,7 +2421,7 @@
       },
       "yaxes": [
         {
-          "format": "percentunit",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -836,28 +2448,30 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "description": "Shows the rate of issued tokens by their type.",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 12,
-        "y": 16
+        "x": 0,
+        "y": 33
       },
       "hiddenSeries": false,
-      "id": 6,
+      "id": 68,
       "legend": {
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "max": false,
+        "max": true,
         "min": false,
         "show": true,
-        "total": false,
-        "values": false
+        "total": true,
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null as zero",
+      "nullPointMode": "null",
       "options": {
         "dataLinks": []
       },
@@ -871,40 +2485,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used",
+          "expr": "sum by (token_type) (rate(oauth_token_issued{instance=\"$Instance\"}[1m]))",
           "format": "time_series",
           "hide": false,
-          "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{memory_id}}",
+          "legendFormat": "Issued {{token_type}} token @{{instance}}",
           "refId": "A"
-        },
-        {
-          "expr": "jvm_memory_committed",
-          "format": "time_series",
-          "hide": true,
-          "instant": false,
-          "intervalFactor": 1,
-          "legendFormat": "{{memory_id}}",
-          "refId": "B"
-        },
-        {
-          "expr": "jvm_memory_max",
-          "format": "time_series",
-          "hide": true,
-          "instant": false,
-          "intervalFactor": 1,
-          "legendFormat": "{{memory_id}}",
-          "refId": "C"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Memory",
+      "title": "Issued Token Rate",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -918,14 +2513,16 @@
       },
       "yaxes": [
         {
-          "format": "decbytes",
-          "label": null,
+          "decimals": 0,
+          "format": "short",
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
           "show": true
         },
         {
+          "decimals": null,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -940,113 +2537,133 @@
       }
     },
     {
-      "cacheTimeout": null,
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
       "datasource": "Prometheus",
+      "description": "Shows the rate of issued tokens by their type.",
+      "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 0,
-        "y": 24
+        "x": 12,
+        "y": 33
       },
-      "id": 2,
-      "links": [],
+      "hiddenSeries": false,
+      "id": 71,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
       "options": {
-        "displayMode": "lcd",
-        "fieldOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              }
-            ],
-            "max": 100,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "blue",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "orientation": "horizontal",
-        "showUnfilled": true
+        "dataLinks": []
       },
-      "pluginVersion": "6.6.0",
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
       "targets": [
         {
-          "expr": "log4j2_appender_total",
-          "format": "time_series",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "instant": false,
-          "intervalFactor": 1,
-          "legendFormat": "{{level}}",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
+          "expr": "sum by (token_type) (rate(oauth_token_revoked{instance=\"$Instance\"}[1m]))",
+          "legendFormat": "Revoked {{token_type}} token@{{instance}}",
+          "refId": "B"
         }
       ],
+      "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "Logging",
-      "type": "bargauge"
+      "title": "Revoked Token Rate",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
-  "refresh": "5s",
+  "refresh": "",
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(up, instance)",
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "Instance",
+        "options": [],
+        "query": "label_values(up, instance)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -1064,6 +2681,7 @@
     ]
   },
   "timezone": "",
-  "title": "Curity Identity Server1",
+  "title": "Curity Identity Server",
+  "uid": "pPzcnF-Zk",
   "version": 1
 }
