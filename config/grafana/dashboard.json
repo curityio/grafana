@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1581587867372,
+  "iteration": 1581595854874,
   "links": [],
   "panels": [
     {
@@ -445,7 +445,7 @@
       "prefixFontSize": "50%",
       "rangeMaps": [
         {
-          "from": "0",
+          "from": "null",
           "text": "OK",
           "to": "0"
         },
@@ -466,7 +466,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "ceil(rate(log4j2_appender_total{level=\"error\", level=\"fatal\"}[1m]))",
+          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"error|fatal\"}[1m])))",
           "format": "time_series",
           "hide": false,
           "legendFormat": "",
@@ -662,8 +662,8 @@
           "scopedVars": {
             "Instance": {
               "selected": false,
-              "text": "idsvr-runtime:4466",
-              "value": "idsvr-runtime:4466"
+              "text": "host.docker.internal:4466",
+              "value": "host.docker.internal:4466"
             }
           },
           "sparkline": {
@@ -677,7 +677,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "up{instance=\"$Instance\"}",
+              "expr": "up{instance=~\"$Instance\"}",
               "legendFormat": "{{instance}}",
               "refId": "A"
             }
@@ -771,8 +771,8 @@
           "scopedVars": {
             "Instance": {
               "selected": false,
-              "text": "idsvr-runtime:4466",
-              "value": "idsvr-runtime:4466"
+              "text": "host.docker.internal:4466",
+              "value": "host.docker.internal:4466"
             }
           },
           "sparkline": {
@@ -877,8 +877,8 @@
           "scopedVars": {
             "Instance": {
               "selected": false,
-              "text": "idsvr-runtime:4466",
-              "value": "idsvr-runtime:4466"
+              "text": "host.docker.internal:4466",
+              "value": "host.docker.internal:4466"
             }
           },
           "sparkline": {
@@ -973,8 +973,8 @@
           "scopedVars": {
             "Instance": {
               "selected": false,
-              "text": "idsvr-runtime:4466",
-              "value": "idsvr-runtime:4466"
+              "text": "host.docker.internal:4466",
+              "value": "host.docker.internal:4466"
             }
           },
           "targets": [
@@ -1029,467 +1029,8 @@
       "scopedVars": {
         "Instance": {
           "selected": false,
-          "text": "idsvr-runtime:4466",
-          "value": "idsvr-runtime:4466"
-        }
-      },
-      "title": "Status $Instance",
-      "type": "row"
-    },
-    {
-      "collapsed": true,
-      "datasource": "Prometheus",
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 6
-      },
-      "id": 72,
-      "panels": [
-        {
-          "cacheTimeout": null,
-          "colorBackground": true,
-          "colorValue": false,
-          "colors": [
-            "#d44a3a",
-            "rgba(237, 129, 40, 0.89)",
-            "#299c46"
-          ],
-          "datasource": "Prometheus",
-          "description": "Indicates if the server is up and running",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "gridPos": {
-            "h": 4,
-            "w": 3,
-            "x": 0,
-            "y": 6
-          },
-          "id": 73,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "options": {},
-          "pluginVersion": "6.6.0",
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "repeat": null,
-          "repeatDirection": "v",
-          "repeatIteration": 1581587867372,
-          "repeatPanelId": 53,
-          "repeatedByRow": true,
-          "scopedVars": {
-            "Instance": {
-              "selected": false,
-              "text": "idsvr:4466",
-              "value": "idsvr:4466"
-            }
-          },
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false,
-            "ymax": null,
-            "ymin": null
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "expr": "up{instance=\"$Instance\"}",
-              "legendFormat": "{{instance}}",
-              "refId": "A"
-            }
-          ],
-          "thresholds": "1,1",
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Status",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "Down",
-              "value": "null"
-            },
-            {
-              "op": "=",
-              "text": "Down",
-              "value": "0"
-            },
-            {
-              "op": "=",
-              "text": "OK",
-              "value": "1"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": true,
-          "colorValue": false,
-          "colors": [
-            "#299c46",
-            "#FF9830",
-            "#F2495C"
-          ],
-          "datasource": "Prometheus",
-          "decimals": null,
-          "description": "Indicates if there were any error logs detected",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "gridPos": {
-            "h": 4,
-            "w": 3,
-            "x": 3,
-            "y": 6
-          },
-          "id": 74,
-          "interval": "",
-          "links": [],
-          "mappingType": 2,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "options": {},
-          "pluginVersion": "6.6.0",
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "0",
-              "text": "OK",
-              "to": "0"
-            },
-            {
-              "from": "1",
-              "text": "ERROR",
-              "to": "100000"
-            }
-          ],
-          "repeatIteration": 1581587867372,
-          "repeatPanelId": 70,
-          "repeatedByRow": true,
-          "scopedVars": {
-            "Instance": {
-              "selected": false,
-              "text": "idsvr:4466",
-              "value": "idsvr:4466"
-            }
-          },
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false,
-            "ymax": null,
-            "ymin": null
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"error|fatal\", instance=~\"$Instance\"}[1m])))",
-              "format": "time_series",
-              "hide": false,
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "thresholds": "1,1",
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Error",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "OK",
-              "value": "null"
-            },
-            {
-              "op": "=",
-              "text": "Debug Log",
-              "value": ">1"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": true,
-          "colorValue": false,
-          "colors": [
-            "#299c46",
-            "#FF9830",
-            "#F2495C"
-          ],
-          "datasource": "Prometheus",
-          "decimals": null,
-          "description": "Indicates if there were any debug or trace logs detected on the instance",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "gridPos": {
-            "h": 4,
-            "w": 3,
-            "x": 6,
-            "y": 6
-          },
-          "id": 75,
-          "interval": "",
-          "links": [],
-          "mappingType": 2,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "options": {},
-          "pluginVersion": "6.6.0",
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "0",
-              "text": "Disabled",
-              "to": "0"
-            },
-            {
-              "from": "1",
-              "text": "Enabled",
-              "to": "100000"
-            }
-          ],
-          "repeatIteration": 1581587867372,
-          "repeatPanelId": 51,
-          "repeatedByRow": true,
-          "scopedVars": {
-            "Instance": {
-              "selected": false,
-              "text": "idsvr:4466",
-              "value": "idsvr:4466"
-            }
-          },
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false,
-            "ymax": null,
-            "ymin": null
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\", instance=~\"$Instance\"}[1m])))",
-              "format": "time_series",
-              "legendFormat": "{{instance}}",
-              "refId": "A"
-            }
-          ],
-          "thresholds": "1,1",
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Debug",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "OK",
-              "value": "null"
-            },
-            {
-              "op": "=",
-              "text": "Debug Log",
-              "value": ">1"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "datasource": "Prometheus",
-          "description": "Shows the number of log entries by their type",
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 10
-          },
-          "id": 76,
-          "links": [],
-          "options": {
-            "displayMode": "lcd",
-            "fieldOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "mappings": [
-                  {
-                    "id": 0,
-                    "op": "=",
-                    "text": "N/A",
-                    "type": 1,
-                    "value": "null"
-                  }
-                ],
-                "max": 100,
-                "min": 0,
-                "nullValueMode": "connected",
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "blue",
-                      "value": null
-                    }
-                  ]
-                },
-                "unit": "none"
-              },
-              "overrides": [],
-              "values": false
-            },
-            "orientation": "horizontal",
-            "showUnfilled": true
-          },
-          "pluginVersion": "6.6.0",
-          "repeatIteration": 1581587867372,
-          "repeatPanelId": 2,
-          "repeatedByRow": true,
-          "scopedVars": {
-            "Instance": {
-              "selected": false,
-              "text": "idsvr:4466",
-              "value": "idsvr:4466"
-            }
-          },
-          "targets": [
-            {
-              "expr": "log4j2_appender_total",
-              "format": "time_series",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "instant": false,
-              "intervalFactor": 1,
-              "legendFormat": "{{level}}@{{instance}}",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": []
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Logs",
-          "type": "bargauge"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": 1581587867372,
-      "repeatPanelId": 55,
-      "scopedVars": {
-        "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "title": "Status $Instance",
@@ -1502,7 +1043,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 6
       },
       "id": 39,
       "panels": [],
@@ -1523,7 +1064,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1565,7 +1106,7 @@
       "timeShift": null,
       "title": "CPU",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1613,7 +1154,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 8
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1660,7 +1201,7 @@
       "timeShift": null,
       "title": "Memory",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1744,7 +1285,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 16
+        "y": 15
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1798,7 +1339,7 @@
       "timeShift": null,
       "title": "HTTP Timing",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -2089,7 +1630,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 16
+        "y": 15
       },
       "hiddenSeries": false,
       "id": 25,
@@ -2207,7 +1748,7 @@
       "timeShift": null,
       "title": "DAP Timing",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -2249,7 +1790,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 23
       },
       "id": 49,
       "panels": [],
@@ -2270,7 +1811,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 25
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 24,
@@ -2362,7 +1903,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 25
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2393,7 +1934,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(authentication_login{instance=\"$Instance\"}[1m])",
+          "expr": "rate(authentication_login{instance=~\"$Instance\"}[1m])",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2455,7 +1996,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 68,
@@ -2485,7 +2026,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (token_type) (rate(oauth_token_issued{instance=\"$Instance\"}[1m]))",
+          "expr": "sum by (token_type) (rate(oauth_token_issued{instance=~\"$Instance\"}[1m]))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2549,7 +2090,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 71,
@@ -2663,7 +2204,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -2683,5 +2224,5 @@
   "timezone": "",
   "title": "Curity Identity Server",
   "uid": "pPzcnF-Zk",
-  "version": 1
+  "version": 6
 }

@@ -58,7 +58,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1581587458813,
+  "iteration": 1581595854875,
   "links": [],
   "panels": [
     {
@@ -487,7 +487,7 @@
       "prefixFontSize": "50%",
       "rangeMaps": [
         {
-          "from": "0",
+          "from": "null",
           "text": "OK",
           "to": "0"
         },
@@ -508,7 +508,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "ceil(rate(log4j2_appender_total{level=\"error\", level=\"fatal\"}[1m]))",
+          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"error|fatal\"}[1m])))",
           "format": "time_series",
           "hide": false,
           "legendFormat": "",
@@ -704,8 +704,8 @@
           "scopedVars": {
             "Instance": {
               "selected": false,
-              "text": "idsvr-runtime:4466",
-              "value": "idsvr-runtime:4466"
+              "text": "host.docker.internal:4466",
+              "value": "host.docker.internal:4466"
             }
           },
           "sparkline": {
@@ -719,7 +719,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "up{instance=\"$Instance\"}",
+              "expr": "up{instance=~\"$Instance\"}",
               "legendFormat": "{{instance}}",
               "refId": "A"
             }
@@ -813,8 +813,8 @@
           "scopedVars": {
             "Instance": {
               "selected": false,
-              "text": "idsvr-runtime:4466",
-              "value": "idsvr-runtime:4466"
+              "text": "host.docker.internal:4466",
+              "value": "host.docker.internal:4466"
             }
           },
           "sparkline": {
@@ -919,8 +919,8 @@
           "scopedVars": {
             "Instance": {
               "selected": false,
-              "text": "idsvr-runtime:4466",
-              "value": "idsvr-runtime:4466"
+              "text": "host.docker.internal:4466",
+              "value": "host.docker.internal:4466"
             }
           },
           "sparkline": {
@@ -1015,8 +1015,8 @@
           "scopedVars": {
             "Instance": {
               "selected": false,
-              "text": "idsvr-runtime:4466",
-              "value": "idsvr-runtime:4466"
+              "text": "host.docker.internal:4466",
+              "value": "host.docker.internal:4466"
             }
           },
           "targets": [
@@ -1141,7 +1141,7 @@
       "timeShift": null,
       "title": "CPU",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1236,7 +1236,7 @@
       "timeShift": null,
       "title": "Memory",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1374,7 +1374,7 @@
       "timeShift": null,
       "title": "HTTP Timing",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1783,7 +1783,7 @@
       "timeShift": null,
       "title": "DAP Timing",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1969,7 +1969,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(authentication_login{instance=\"$Instance\"}[1m])",
+          "expr": "rate(authentication_login{instance=~\"$Instance\"}[1m])",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2061,7 +2061,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (token_type) (rate(oauth_token_issued{instance=\"$Instance\"}[1m]))",
+          "expr": "sum by (token_type) (rate(oauth_token_issued{instance=~\"$Instance\"}[1m]))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2235,7 +2235,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -2255,5 +2255,5 @@
   "timezone": "",
   "title": "Curity Identity Server",
   "uid": "pPzcnF-Zk",
-  "version": 5
+  "version": 6
 }
