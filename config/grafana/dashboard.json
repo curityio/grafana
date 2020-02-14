@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1581676463862,
+  "iteration": 1581686077446,
   "links": [],
   "panels": [
     {
@@ -605,7 +605,7 @@
       "repeat": "Instance",
       "scopedVars": {
         "Instance": {
-          "selected": true,
+          "selected": false,
           "text": "idsvr:4466",
           "value": "idsvr:4466"
         }
@@ -672,7 +672,7 @@
       "repeatDirection": "v",
       "scopedVars": {
         "Instance": {
-          "selected": true,
+          "selected": false,
           "text": "idsvr:4466",
           "value": "idsvr:4466"
         }
@@ -781,7 +781,7 @@
       ],
       "scopedVars": {
         "Instance": {
-          "selected": true,
+          "selected": false,
           "text": "idsvr:4466",
           "value": "idsvr:4466"
         }
@@ -887,7 +887,7 @@
       ],
       "scopedVars": {
         "Instance": {
-          "selected": true,
+          "selected": false,
           "text": "idsvr:4466",
           "value": "idsvr:4466"
         }
@@ -928,6 +928,33 @@
         }
       ],
       "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "content": "\n\n\n\n",
+      "datasource": null,
+      "gridPos": {
+        "h": 3,
+        "w": 12,
+        "x": 6,
+        "y": 6
+      },
+      "id": 76,
+      "links": [],
+      "mode": "markdown",
+      "options": {},
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
     },
     {
       "datasource": "Prometheus",
@@ -976,7 +1003,7 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": true,
+          "selected": false,
           "text": "idsvr:4466",
           "value": "idsvr:4466"
         }
@@ -1040,7 +1067,7 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": true,
+          "selected": false,
           "text": "idsvr:4466",
           "value": "idsvr:4466"
         }
@@ -1064,10 +1091,10 @@
       "datasource": "Prometheus",
       "description": "Shows the number of log entries by their type",
       "gridPos": {
-        "h": 5,
+        "h": 7,
         "w": 12,
-        "x": 0,
-        "y": 16
+        "x": 6,
+        "y": 9
       },
       "id": 2,
       "links": [],
@@ -1090,8 +1117,6 @@
                 "value": "null"
               }
             ],
-            "max": 100,
-            "min": 0,
             "nullValueMode": "connected",
             "thresholds": {
               "mode": "absolute",
@@ -1113,14 +1138,14 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": true,
+          "selected": false,
           "text": "idsvr:4466",
           "value": "idsvr:4466"
         }
       },
       "targets": [
         {
-          "expr": "log4j2_appender_total",
+          "expr": "log4j2_appender_total{instance=~\"$Instance\"}",
           "format": "time_series",
           "groupBy": [
             {
@@ -1172,7 +1197,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 16
       },
       "id": 39,
       "panels": [],
@@ -1193,7 +1218,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 17
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1283,7 +1308,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 43
+        "y": 17
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1414,10 +1439,11 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 51
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 15,
+      "interval": "1m",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -1447,7 +1473,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(http_server_request_time_sum{instance=~\"$Instance\"}[1m])/rate(http_server_request_time_count{instance=~\"$Instance\"}[1m])",
+          "expr": "rate(http_server_request_time_sum{instance=~\"$Instance\"}[$__interval])/rate(http_server_request_time_count{instance=~\"$Instance\"}[$__interval])",
           "format": "time_series",
           "legendFormat": "HTTP requests@{{instance}}",
           "refId": "A"
@@ -1759,10 +1785,11 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 51
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 25,
+      "interval": "1m",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -1792,70 +1819,70 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (dap_id) (rate(datasource_account_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_account_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_account_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_account_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "account@{{instance}}",
           "refId": "B"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_attribute_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_attribute_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_attribute_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_attribute_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "attribute@{{instance}}",
           "refId": "A"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_bucket_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_bucket_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_bucket_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_bucket_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "bucket@{{instance}}",
           "refId": "C"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_credential_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_credential_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_credential_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_credential_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "credential@{{instance}}",
           "refId": "D"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_dcr_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_dcr_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_dcr_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_dcr_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "DCR@{{instance}}",
           "refId": "E"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_delegation_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_delegation_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_delegation_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_delegation_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "delegation@{{instance}}",
           "refId": "F"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_device_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_device_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_device_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_device_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "device@{{instance}}",
           "refId": "G"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_nonce_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_nonce_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_nonce_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_nonce_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "nonce@{{instance}}",
           "refId": "H"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_session_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_session_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_session_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_session_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "session@{{instance}}",
           "refId": "I"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_token_sum{instance=~\"$Instance\"}[1m])) / sum by (dap_id) (rate(datasource_token_count{instance=~\"$Instance\"}[1m]))",
+          "expr": "sum by (dap_id) (rate(datasource_token_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_token_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "token@{{instance}}",
@@ -1919,7 +1946,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 59
+        "y": 33
       },
       "id": 49,
       "panels": [],
@@ -1940,7 +1967,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 60
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 24,
@@ -2034,7 +2061,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 60
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2129,7 +2156,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 68
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 68,
@@ -2224,7 +2251,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 68
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 71,
@@ -2304,7 +2331,7 @@
       }
     }
   ],
-  "refresh": "5s",
+  "refresh": "",
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
@@ -2313,20 +2340,19 @@
       {
         "allValue": null,
         "current": {
-          "text": "idsvr:4466",
-          "value": [
-            "idsvr:4466"
-          ]
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(up, instance)",
+        "definition": "label_values(cpu_usage, instance)",
         "hide": 0,
         "includeAll": true,
         "label": null,
         "multi": true,
         "name": "Instance",
         "options": [],
-        "query": "label_values(up, instance)",
+        "query": "label_values(cpu_usage, instance)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2360,5 +2386,5 @@
   "timezone": "",
   "title": "Curity Identity Server",
   "uid": "pPzcnF-Zk",
-  "version": 9
+  "version": 10
 }
