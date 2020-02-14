@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1581686077446,
+  "iteration": 1581704289652,
   "links": [],
   "panels": [
     {
@@ -365,7 +365,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "min(up)",
+          "expr": "up{instance=~\"$idsvr_instances\"}",
           "refId": "A"
         }
       ],
@@ -466,7 +466,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(log4j2_appender_total{level=~\"error|fatal\"})",
+          "expr": "sum(log4j2_appender_total{level=~\"error|fatal\", instance=~\"$idsvr_instances\"})",
           "format": "time_series",
           "hide": false,
           "legendFormat": "",
@@ -565,7 +565,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\"}[5m])))",
+          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\", instance=~\"$idsvr_instances\"}[5m])))",
           "format": "time_series",
           "legendFormat": "",
           "refId": "A"
@@ -605,9 +605,9 @@
       "repeat": "Instance",
       "scopedVars": {
         "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "selected": true,
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "title": "Status $Instance",
@@ -672,9 +672,9 @@
       "repeatDirection": "v",
       "scopedVars": {
         "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "selected": true,
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "sparkline": {
@@ -781,9 +781,9 @@
       ],
       "scopedVars": {
         "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "selected": true,
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "sparkline": {
@@ -887,9 +887,9 @@
       ],
       "scopedVars": {
         "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "selected": true,
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "sparkline": {
@@ -945,9 +945,9 @@
       "options": {},
       "scopedVars": {
         "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "selected": true,
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "timeFrom": null,
@@ -1003,9 +1003,9 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "selected": true,
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "targets": [
@@ -1067,9 +1067,9 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "selected": true,
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "targets": [
@@ -1138,9 +1138,9 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": false,
-          "text": "idsvr:4466",
-          "value": "idsvr:4466"
+          "selected": true,
+          "text": "host.docker.internal:4466",
+          "value": "host.docker.internal:4466"
         }
       },
       "targets": [
@@ -1197,7 +1197,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 32
       },
       "id": 39,
       "panels": [],
@@ -1218,7 +1218,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 17
+        "y": 33
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1308,7 +1308,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 17
+        "y": 33
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1439,7 +1439,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 25
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1785,7 +1785,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 25
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1946,7 +1946,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 49
       },
       "id": 49,
       "panels": [],
@@ -1967,7 +1967,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 50
       },
       "hiddenSeries": false,
       "id": 24,
@@ -2061,7 +2061,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 50
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2156,7 +2156,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 58
       },
       "hiddenSeries": false,
       "id": 68,
@@ -2251,7 +2251,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 58
       },
       "hiddenSeries": false,
       "id": 71,
@@ -2331,7 +2331,7 @@
       }
     }
   ],
-  "refresh": "",
+  "refresh": "5s",
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
@@ -2340,9 +2340,10 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "text": "host.docker.internal:4466",
+          "value": [
+            "host.docker.internal:4466"
+          ]
         },
         "datasource": "Prometheus",
         "definition": "label_values(cpu_usage, instance)",
@@ -2351,6 +2352,33 @@
         "label": null,
         "multi": true,
         "name": "Instance",
+        "options": [],
+        "query": "label_values(cpu_usage, instance)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(cpu_usage, instance)",
+        "hide": 2,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "idsvr_instances",
         "options": [],
         "query": "label_values(cpu_usage, instance)",
         "refresh": 1,
@@ -2386,5 +2414,5 @@
   "timezone": "",
   "title": "Curity Identity Server",
   "uid": "pPzcnF-Zk",
-  "version": 10
+  "version": 1
 }

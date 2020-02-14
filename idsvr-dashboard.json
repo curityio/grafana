@@ -70,7 +70,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1581686077444,
+  "iteration": 1581704289653,
   "links": [],
   "panels": [
     {
@@ -419,7 +419,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "min(up)",
+          "expr": "up{instance=~\"$idsvr_instances\"}",
           "refId": "A"
         }
       ],
@@ -520,7 +520,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(log4j2_appender_total{level=~\"error|fatal\"})",
+          "expr": "sum(log4j2_appender_total{level=~\"error|fatal\", instance=~\"$idsvr_instances\"})",
           "format": "time_series",
           "hide": false,
           "legendFormat": "",
@@ -619,7 +619,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\"}[5m])))",
+          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\", instance=~\"$idsvr_instances\"}[5m])))",
           "format": "time_series",
           "legendFormat": "",
           "refId": "A"
@@ -1195,7 +1195,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 32
       },
       "id": 39,
       "panels": [],
@@ -1216,7 +1216,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 17
+        "y": 33
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1306,7 +1306,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 17
+        "y": 33
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1437,7 +1437,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 25
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1783,7 +1783,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 25
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1944,7 +1944,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 49
       },
       "id": 49,
       "panels": [],
@@ -1965,7 +1965,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 50
       },
       "hiddenSeries": false,
       "id": 24,
@@ -2059,7 +2059,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 50
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2154,7 +2154,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 58
       },
       "hiddenSeries": false,
       "id": 68,
@@ -2249,7 +2249,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 58
       },
       "hiddenSeries": false,
       "id": 71,
@@ -2329,7 +2329,7 @@
       }
     }
   ],
-  "refresh": "",
+  "refresh": "5s",
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
@@ -2345,6 +2345,28 @@
         "label": null,
         "multi": true,
         "name": "Instance",
+        "options": [],
+        "query": "label_values(cpu_usage, instance)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
+        "definition": "label_values(cpu_usage, instance)",
+        "hide": 2,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "idsvr_instances",
         "options": [],
         "query": "label_values(cpu_usage, instance)",
         "refresh": 1,
@@ -2380,5 +2402,5 @@
   "timezone": "",
   "title": "Curity Identity Server",
   "uid": "pPzcnF-Zk",
-  "version": 10
+  "version": 1
 }
