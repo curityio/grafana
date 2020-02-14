@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1581704289652,
+  "id": 3,
+  "iteration": 1581705990858,
   "links": [],
   "panels": [
     {
@@ -103,7 +103,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(authentication_login)",
+          "expr": "sum(idsvr_authentication_login)",
           "legendFormat": "{{acr}}",
           "refId": "A"
         }
@@ -190,7 +190,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(authentication_sso)",
+          "expr": "sum(idsvr_authentication_sso)",
           "legendFormat": "{{acr}}",
           "refId": "A"
         }
@@ -277,7 +277,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(oauth_token_issued)",
+          "expr": "sum(idsvr_oauth_token_issued)",
           "legendFormat": "{{token_type}}",
           "refId": "A"
         }
@@ -605,9 +605,9 @@
       "repeat": "Instance",
       "scopedVars": {
         "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
         }
       },
       "title": "Status $Instance",
@@ -672,9 +672,9 @@
       "repeatDirection": "v",
       "scopedVars": {
         "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
         }
       },
       "sparkline": {
@@ -781,9 +781,9 @@
       ],
       "scopedVars": {
         "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
         }
       },
       "sparkline": {
@@ -887,9 +887,9 @@
       ],
       "scopedVars": {
         "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
         }
       },
       "sparkline": {
@@ -932,7 +932,7 @@
     {
       "cacheTimeout": null,
       "content": "\n\n\n\n",
-      "datasource": null,
+      "datasource": "Prometheus",
       "gridPos": {
         "h": 3,
         "w": 12,
@@ -945,9 +945,9 @@
       "options": {},
       "scopedVars": {
         "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
         }
       },
       "timeFrom": null,
@@ -1003,14 +1003,14 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
         }
       },
       "targets": [
         {
-          "expr": "cpu_usage{instance=~\"$Instance\"}",
+          "expr": "idsvr_cpu_usage{instance=~\"$Instance\"}",
           "refId": "A"
         }
       ],
@@ -1067,14 +1067,14 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
         }
       },
       "targets": [
         {
-          "expr": "sum(jvm_memory_used{instance=~\"$Instance\"})/1024/1024",
+          "expr": "sum(idsvr_jvm_memory_used{instance=~\"$Instance\"})/1024/1024",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -1138,9 +1138,9 @@
       "pluginVersion": "6.6.0",
       "scopedVars": {
         "Instance": {
-          "selected": true,
-          "text": "host.docker.internal:4466",
-          "value": "host.docker.internal:4466"
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
         }
       },
       "targets": [
@@ -1197,7 +1197,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 16
       },
       "id": 39,
       "panels": [],
@@ -1218,7 +1218,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 17
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1248,7 +1248,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "cpu_usage{instance=~\"$Instance\"}",
+          "expr": "idsvr_cpu_usage{instance=~\"$Instance\"}",
           "hide": false,
           "legendFormat": "CPU Usage@{{instance}}",
           "refId": "A"
@@ -1308,7 +1308,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 17
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1340,7 +1340,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used{instance=~\"$Instance\"}",
+          "expr": "idsvr_jvm_memory_used{instance=~\"$Instance\"}",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -1439,7 +1439,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1473,7 +1473,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(http_server_request_time_sum{instance=~\"$Instance\"}[$__interval])/rate(http_server_request_time_count{instance=~\"$Instance\"}[$__interval])",
+          "expr": "rate(idsvr_http_server_request_time_sum{instance=~\"$Instance\"}[$__interval])/rate(idsvr_http_server_request_time_count{instance=~\"$Instance\"}[$__interval])",
           "format": "time_series",
           "legendFormat": "HTTP requests@{{instance}}",
           "refId": "A"
@@ -1785,7 +1785,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 41
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1819,70 +1819,70 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (dap_id) (rate(datasource_account_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_account_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_account_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_account_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "account@{{instance}}",
           "refId": "B"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_attribute_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_attribute_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_attribute_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_attribute_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "attribute@{{instance}}",
           "refId": "A"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_bucket_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_bucket_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_bucket_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_bucket_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "bucket@{{instance}}",
           "refId": "C"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_credential_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_credential_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_credential_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_credential_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "credential@{{instance}}",
           "refId": "D"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_dcr_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_dcr_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_dcr_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_dcr_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "DCR@{{instance}}",
           "refId": "E"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_delegation_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_delegation_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_delegation_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_delegation_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "delegation@{{instance}}",
           "refId": "F"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_device_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_device_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_device_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_device_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "device@{{instance}}",
           "refId": "G"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_nonce_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_nonce_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_nonce_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_nonce_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "nonce@{{instance}}",
           "refId": "H"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_session_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_session_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_session_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_session_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "session@{{instance}}",
           "refId": "I"
         },
         {
-          "expr": "sum by (dap_id) (rate(datasource_token_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(datasource_token_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_token_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_token_count{instance=~\"$Instance\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "token@{{instance}}",
@@ -1946,7 +1946,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 33
       },
       "id": 49,
       "panels": [],
@@ -1967,7 +1967,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 24,
@@ -1998,7 +1998,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(authentication_sso{instance=~\"$Instance\"}[$__interval])",
+          "expr": "rate(idsvr_authentication_sso{instance=~\"$Instance\"}[$__interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -2061,7 +2061,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2093,7 +2093,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(authentication_login{instance=~\"$Instance\"}[$__interval])",
+          "expr": "rate(idsvr_authentication_login{instance=~\"$Instance\"}[$__interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -2156,7 +2156,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 58
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 68,
@@ -2187,7 +2187,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (token_type, instance) (rate(oauth_token_issued{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_issued{instance=~\"$Instance\"}[$__interval]))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2251,7 +2251,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 58
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 71,
@@ -2282,7 +2282,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (token_type,instance) (rate(oauth_token_revoked{instance=\"$Instance\"}[$__interval]))",
+          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_revoked{instance=\"$Instance\"}[$__interval]))",
           "legendFormat": "{{token_type}} token@{{instance}}",
           "refId": "B"
         }
@@ -2340,10 +2340,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "host.docker.internal:4466",
-          "value": [
-            "host.docker.internal:4466"
-          ]
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "definition": "label_values(cpu_usage, instance)",
@@ -2368,9 +2367,7 @@
         "allValue": null,
         "current": {
           "text": "All",
-          "value": [
-            "$__all"
-          ]
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "definition": "label_values(cpu_usage, instance)",
