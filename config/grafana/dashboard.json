@@ -365,7 +365,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "up{instance=~\"$idsvr_instances\"}",
+          "expr": "min(up{instance=~\"$idsvr_instances\"})",
           "refId": "A"
         }
       ],
