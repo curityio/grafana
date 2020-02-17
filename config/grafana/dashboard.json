@@ -1,58 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "Prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "bargauge",
-      "name": "Bar Gauge",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "gauge",
-      "name": "Gauge",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "6.6.0"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "singlestat",
-      "name": "Singlestat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "text",
-      "name": "Text",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -69,13 +15,13 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
-  "iteration": 1581704289653,
+  "id": 3,
+  "iteration": 1581705990858,
   "links": [],
   "panels": [
     {
       "collapsed": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -96,7 +42,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "decimals": 0,
       "description": "The number of authentication events raised by all instances during the dashboard time.",
       "format": "none",
@@ -186,7 +132,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "decimals": 0,
       "description": "The number of SSO events raised by all instances during the dashboard time.",
       "format": "none",
@@ -273,7 +219,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "decimals": 0,
       "description": "The number fo all oauth tokens issued by all instances during the dashboard time.",
       "format": "none",
@@ -360,7 +306,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Indicates if all the instances are up and running",
       "format": "none",
       "gauge": {
@@ -457,7 +403,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "decimals": null,
       "description": "Indicates if any of the instances logged an error.",
       "format": "none",
@@ -556,7 +502,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "decimals": null,
       "description": "Indicates if there were any debug or trace logs detected on any of the instances in an interval of 5 minutes. As a result it will take at a minimum 5 minutes after you disabled the logs until this flag changes.",
       "format": "none",
@@ -647,7 +593,7 @@
     },
     {
       "collapsed": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -657,6 +603,13 @@
       "id": 55,
       "panels": [],
       "repeat": "Instance",
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
       "title": "Status $Instance",
       "type": "row"
     },
@@ -669,7 +622,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Indicates if the server is up and running",
       "format": "none",
       "gauge": {
@@ -717,6 +670,13 @@
       ],
       "repeat": null,
       "repeatDirection": "v",
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -767,7 +727,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "decimals": null,
       "description": "Indicates if there were any error logs detected. Reset the metrics if the error was resolved.",
       "format": "none",
@@ -819,6 +779,13 @@
           "to": "100000"
         }
       ],
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -866,7 +833,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "decimals": null,
       "description": "Indicates if there were any debug or trace logs detected on this instance in an interval of 5 minutes. As a result it will take at a minimum 5 minutes after you disabled the logs until this flag changes.",
       "format": "none",
@@ -918,6 +885,13 @@
           "to": "100000"
         }
       ],
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -958,7 +932,7 @@
     {
       "cacheTimeout": null,
       "content": "\n\n\n\n",
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "gridPos": {
         "h": 3,
         "w": 12,
@@ -969,6 +943,13 @@
       "links": [],
       "mode": "markdown",
       "options": {},
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
       "timeFrom": null,
       "timeShift": null,
       "title": "",
@@ -976,7 +957,7 @@
       "type": "text"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Last reported CPU usage in percent",
       "gridPos": {
         "h": 7,
@@ -1020,6 +1001,13 @@
         "showThresholdMarkers": true
       },
       "pluginVersion": "6.6.0",
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
       "targets": [
         {
           "expr": "idsvr_cpu_usage{instance=~\"$Instance\"}",
@@ -1032,7 +1020,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Last reported total memory usage in MiB",
       "gridPos": {
         "h": 7,
@@ -1077,6 +1065,13 @@
         "showThresholdMarkers": true
       },
       "pluginVersion": "6.6.0",
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
       "targets": [
         {
           "expr": "sum(idsvr_jvm_memory_used{instance=~\"$Instance\"})/1024/1024",
@@ -1093,7 +1088,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the number of log entries by their type",
       "gridPos": {
         "h": 7,
@@ -1141,6 +1136,13 @@
         "showUnfilled": true
       },
       "pluginVersion": "6.6.0",
+      "scopedVars": {
+        "Instance": {
+          "selected": false,
+          "text": "idsvr:4466",
+          "value": "idsvr:4466"
+        }
+      },
       "targets": [
         {
           "expr": "log4j2_appender_total{instance=~\"$Instance\"}",
@@ -1190,12 +1192,12 @@
     },
     {
       "collapsed": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 16
       },
       "id": 39,
       "panels": [],
@@ -1208,7 +1210,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the CPU usage in percent",
       "fill": 1,
       "fillGradient": 0,
@@ -1216,7 +1218,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 17
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1298,7 +1300,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the memory usage in mb",
       "fill": 1,
       "fillGradient": 0,
@@ -1306,7 +1308,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 17
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1429,7 +1431,7 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the average time in seconds that it takes to process an HTTP request. This includes requests to admin and runtime nodes.",
       "fill": 1,
       "fillGradient": 0,
@@ -1437,7 +1439,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1775,7 +1777,7 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the average time in seconds that it takes to process datasource queries. Grouped by datasource type and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -1783,7 +1785,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 41
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1939,12 +1941,12 @@
     },
     {
       "collapsed": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 33
       },
       "id": 49,
       "panels": [],
@@ -1957,7 +1959,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the average increase of SSO events per second. Grouped by authentication method and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -1965,7 +1967,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 24,
@@ -2051,7 +2053,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the average increase of login events per second. Grouped by authentication method and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -2059,7 +2061,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2146,7 +2148,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the average increase of issued tokens per second. Grouped by token type and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -2154,7 +2156,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 58
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 68,
@@ -2241,7 +2243,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "description": "Shows the average increase of revoked tokens per second. Group by token type and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -2249,7 +2251,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 58
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 71,
@@ -2337,8 +2339,12 @@
     "list": [
       {
         "allValue": null,
-        "current": {},
-        "datasource": "${DS_PROMETHEUS}",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "Prometheus",
         "definition": "label_values(idsvr_cpu_usage, instance)",
         "hide": 0,
         "includeAll": true,
@@ -2363,7 +2369,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "Prometheus",
         "definition": "label_values(idsvr_cpu_usage, instance)",
         "hide": 2,
         "includeAll": true,

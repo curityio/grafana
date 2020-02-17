@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+scrape_configs:
+- job_name: curity
+  static_configs:
+  - targets: ['idsvr:4466']
