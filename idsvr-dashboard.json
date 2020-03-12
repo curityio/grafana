@@ -156,7 +156,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(idsvr_authentication_login)",
+          "expr": "sum(increase(idsvr_authentication_login[$__range]))",
+          "instant": true,
           "legendFormat": "{{acr}}",
           "refId": "A"
         }
@@ -174,7 +175,7 @@
           "value": "null"
         }
       ],
-      "valueName": "delta"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -242,7 +243,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(idsvr_authentication_sso)",
+          "expr": "sum(increase(idsvr_authentication_sso[$__range]))",
+          "instant": true,
           "legendFormat": "{{acr}}",
           "refId": "A"
         }
@@ -260,7 +262,7 @@
           "value": "null"
         }
       ],
-      "valueName": "delta"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -328,7 +330,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(idsvr_oauth_token_issued)",
+          "expr": "sum(increase(idsvr_oauth_token_issued[$__range]))",
+          "instant": true,
           "legendFormat": "{{token_type}}",
           "refId": "A"
         }
@@ -346,7 +349,7 @@
           "value": "null"
         }
       ],
-      "valueName": "delta"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
