@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1581705990858,
+  "id": 2,
+  "iteration": 1584013117753,
   "links": [],
   "panels": [
     {
@@ -77,7 +77,6 @@
       "maxPerRow": 3,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -103,7 +102,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(idsvr_authentication_login)",
+          "expr": "sum(increase(idsvr_authentication_login[$__range]))",
+          "instant": true,
           "legendFormat": "{{acr}}",
           "refId": "A"
         }
@@ -121,7 +121,7 @@
           "value": "null"
         }
       ],
-      "valueName": "delta"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -166,7 +166,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -190,7 +189,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(idsvr_authentication_sso)",
+          "expr": "sum(increase(idsvr_authentication_sso[$__range]))",
+          "instant": true,
           "legendFormat": "{{acr}}",
           "refId": "A"
         }
@@ -208,7 +208,7 @@
           "value": "null"
         }
       ],
-      "valueName": "delta"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -253,7 +253,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -277,7 +276,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(idsvr_oauth_token_issued)",
+          "expr": "sum(increase(idsvr_oauth_token_issued[$__range]))",
+          "instant": true,
           "legendFormat": "{{token_type}}",
           "refId": "A"
         }
@@ -295,7 +295,7 @@
           "value": "null"
         }
       ],
-      "valueName": "delta"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -339,7 +339,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -437,7 +436,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -536,7 +534,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -655,7 +652,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -761,7 +757,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -867,7 +862,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -942,7 +936,6 @@
       "id": 76,
       "links": [],
       "mode": "markdown",
-      "options": {},
       "scopedVars": {
         "Instance": {
           "selected": false,
@@ -1702,7 +1695,7 @@
         "max": true,
         "min": false,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
@@ -1750,6 +1743,7 @@
       },
       "yaxes": [
         {
+          "decimals": 0,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1792,8 +1786,8 @@
       "legend": {
         "alignAsTable": true,
         "avg": true,
-        "current": true,
-        "max": false,
+        "current": false,
+        "max": true,
         "min": false,
         "rightSide": false,
         "show": true,
@@ -1845,6 +1839,7 @@
       },
       "yaxes": [
         {
+          "decimals": 0,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1891,7 +1886,7 @@
         "max": true,
         "min": false,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
@@ -1986,7 +1981,7 @@
         "max": true,
         "min": false,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
@@ -2134,5 +2129,5 @@
   "timezone": "",
   "title": "Curity Identity Server",
   "uid": "pPzcnF-Zk",
-  "version": 1
+  "version": 2
 }
