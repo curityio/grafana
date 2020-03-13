@@ -70,7 +70,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1581704289653,
+  "iteration": 1584016206709,
   "links": [],
   "panels": [
     {
@@ -131,7 +131,6 @@
       "maxPerRow": 3,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -220,7 +219,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -307,7 +305,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -393,7 +390,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -491,7 +487,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -590,7 +585,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -702,7 +696,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -801,7 +794,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -900,7 +892,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.6.0",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -968,7 +959,6 @@
       "id": 76,
       "links": [],
       "mode": "markdown",
-      "options": {},
       "timeFrom": null,
       "timeShift": null,
       "title": "",
@@ -1195,7 +1185,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 16
       },
       "id": 39,
       "panels": [],
@@ -1216,7 +1206,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 17
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1306,7 +1296,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 17
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1402,7 +1392,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1506,7 +1496,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 41
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1667,7 +1657,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 33
       },
       "id": 49,
       "panels": [],
@@ -1688,7 +1678,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 24,
@@ -1700,7 +1690,7 @@
         "max": true,
         "min": false,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
@@ -1748,6 +1738,7 @@
       },
       "yaxes": [
         {
+          "decimals": 0,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1782,7 +1773,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 23,
@@ -1790,8 +1781,8 @@
       "legend": {
         "alignAsTable": true,
         "avg": true,
-        "current": true,
-        "max": false,
+        "current": false,
+        "max": true,
         "min": false,
         "rightSide": false,
         "show": true,
@@ -1843,6 +1834,7 @@
       },
       "yaxes": [
         {
+          "decimals": 0,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1877,7 +1869,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 58
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 68,
@@ -1889,7 +1881,7 @@
         "max": true,
         "min": false,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
@@ -1972,7 +1964,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 58
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 71,
@@ -1984,7 +1976,7 @@
         "max": true,
         "min": false,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
