@@ -1,7 +1,7 @@
 # Grafana Dashboard for Curity Identity Server
 
-[![Quality](https://curity.io/assets/images/badges/grafana-quality.svg)](https://curity.io/resources/code-examples/status/)
-[![Availability](https://curity.io/assets/images/badges/grafana-availability.svg)](https://curity.io/resources/code-examples/status/)
+[![Quality](https://img.shields.io/badge/quality-production-green)](https://curity.io/resources/code-examples/status/)
+[![Availability](https://img.shields.io/badge/availability-binary-blue)](https://curity.io/resources/code-examples/status/)
 
 Curity Identity Server publishes prometheus-compliant metrics. Grafana is a tool that can be used to visualize the metrics collected by Prometheus.
 This repository provides a preconfigured dashboard that shows the most important metrics of Curity Identity Server. Feel free to download the .json file and import it into your Grafana instance to view all the stats of your Curity Identity Server instance.
