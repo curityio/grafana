@@ -10,7 +10,7 @@ This repository provides a preconfigured dashboard that shows the most important
 
 To use this dashboard, you must have an environment that has at least the following systems installed:
 
-* An instances of Curity Identity Server with metrics enabled (enabled by default and listening on port 4466)
+* An instance of Curity Identity Server with metrics enabled (enabled by default and listening on port 4466)
 * An instance of Prometheus that polls the metrics from Curity Identity Server.
 Check out [Getting Started with Prometheus](https://prometheus.io/docs/prometheus/latest/getting_started/)
 * An instance of Grafana with a datasource configured that points to the Prometheus instance above:
