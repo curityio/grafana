@@ -8,6 +8,7 @@ services:
     ports:
       - "6749:6749"
       - "4466:4466"
+      - "8443:8443"
     networks:
       demonetwork:
         aliases:

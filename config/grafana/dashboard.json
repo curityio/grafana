@@ -221,7 +221,7 @@
       ],
       "datasource": "Prometheus",
       "decimals": 0,
-      "description": "The number fo all oauth tokens issued by all instances during the dashboard time.",
+      "description": "The number of all oauth tokens issued by all instances during the dashboard time.",
       "format": "none",
       "gauge": {
         "maxValue": 100,
