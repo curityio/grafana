@@ -4,7 +4,7 @@ services:
     container_name: idsvr
     environment:
       PASSWORD: Secr3t
-    image: curity/idsvr
+    image: curity.azurecr.io/curity/idsvr:latest
     ports:
       - "6749:6749"
       - "4466:4466"
