@@ -156,7 +156,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(increase(idsvr_authentication_login[$__range]))",
+          "expr": "sum(increase(idsvr_authentication_login_total[$__range]))",
           "instant": true,
           "legendFormat": "{{acr}}",
           "refId": "A"
@@ -243,7 +243,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(increase(idsvr_authentication_sso[$__range]))",
+          "expr": "sum(increase(idsvr_authentication_sso_total[$__range]))",
           "instant": true,
           "legendFormat": "{{acr}}",
           "refId": "A"
@@ -330,7 +330,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(increase(idsvr_oauth_token_issued[$__range]))",
+          "expr": "sum(increase(idsvr_oauth_token_issued_total[$__range]))",
           "instant": true,
           "legendFormat": "{{token_type}}",
           "refId": "A"
@@ -417,7 +417,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(increase(idsvr_oauth_introspection_denied[$__range]))",
+          "expr": "sum(increase(idsvr_oauth_introspection_denied_total[$__range]))",
           "instant": true,
           "interval": "",
           "legendFormat": "{{token_type}}",
@@ -1800,7 +1800,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(idsvr_authentication_sso{instance=~\"$Instance\"}[$__interval])",
+          "expr": "rate(idsvr_authentication_sso_total{instance=~\"$Instance\"}[$__interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1896,7 +1896,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(idsvr_authentication_login{instance=~\"$Instance\"}[$__interval])",
+          "expr": "rate(idsvr_authentication_login_total{instance=~\"$Instance\"}[$__interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1991,7 +1991,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_issued{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_issued_total{instance=~\"$Instance\"}[$__interval]))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2086,7 +2086,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_revoked{instance=\"$Instance\"}[$__interval]))",
+          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_revoked_total{instance=\"$Instance\"}[$__interval]))",
           "legendFormat": "{{token_type}} token@{{instance}}",
           "refId": "B"
         }

@@ -16,6 +16,11 @@ Check out [Getting Started with Prometheus](https://prometheus.io/docs/prometheu
 * An instance of Grafana with a datasource configured that points to the Prometheus instance above:
 Check out [Getting Started with Grafana](https://grafana.com/docs/grafana/latest/guides/getting_started/)
 
+# The Curity Identity Server Version
+
+Since version 2.0. this dashboard is configured to work with versions of the Curity Identity Server from 7.0. onwards.
+For previous versions of the Curity Identity Server use version 1.0.2 of the dashboard.
+
 # Quickstart Guide
 If you just want to review the dashboard, consider to setup your environment using Docker. For that purpose a configuration files for Prometheus and Grafana as well as a docker-compose file were added to the repository. Using docker-compose you can configure and start the required containers with a single command.
 Run the following command inside the repository to create an environment:
