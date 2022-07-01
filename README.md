@@ -39,12 +39,16 @@ The systems are preconfigured. Just access Grafana with the default password (se
 
 | Endpoint                       | Description                                                  |
 |--------------------------------|--------------------------------------------------------------|
-| https://localhost:6749/admin   | Admin UI for Curity Identity Server
+| https://localhost:6749/admin   | Admin UI for Curity Identity Server                          |
 | http://localhost:4466/metrics  | Raw metrics published by Curity Identity Server              |
 | http://localhost:9090/targets  | Endpoint to check status of targets configured in Prometheus |
 | http://localhost:3000          | Grafana Web UI                                               |
 
 If you have an existing installation of Curity Identity Server, Prometheus and Grafana, just add this Dashboard by importing [idsvr-dashboard.json](idsvr-dashboard.json).
+
+## Teardown
+
+Once you're done with evaluating the dashboard run `docker-compose rm` to remove any created containers.
 
 # Contributing
 

@@ -75,7 +75,7 @@
   "panels": [
     {
       "collapsed": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -96,7 +96,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "decimals": 0,
       "description": "The number of authentication events raised by all instances during the dashboard time.",
       "format": "none",
@@ -186,7 +186,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "decimals": 0,
       "description": "The number of SSO events raised by all instances during the dashboard time.",
       "format": "none",
@@ -273,7 +273,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "decimals": 0,
       "description": "The number of all oauth tokens issued by all instances during the dashboard time.",
       "format": "none",
@@ -360,7 +360,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "decimals": 0,
       "description": "The number of Introspections denied because of tokens not being active, by all instances during the dashboard time.",
       "format": "none",
@@ -448,7 +448,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Indicates if all the instances are up and running",
       "format": "none",
       "gauge": {
@@ -544,7 +544,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "decimals": null,
       "description": "Indicates if any of the instances logged an error.",
       "format": "none",
@@ -642,7 +642,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "decimals": null,
       "description": "Indicates if there were any debug or trace logs detected on any of the instances in an interval of 5 minutes. As a result it will take at a minimum 5 minutes after you disabled the logs until this flag changes.",
       "format": "none",
@@ -732,7 +732,7 @@
     },
     {
       "collapsed": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -754,7 +754,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Indicates if the server is up and running",
       "format": "none",
       "gauge": {
@@ -851,7 +851,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "decimals": null,
       "description": "Indicates if there were any error logs detected. Reset the metrics if the error was resolved.",
       "format": "none",
@@ -949,7 +949,7 @@
         "#FF9830",
         "#F2495C"
       ],
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "decimals": null,
       "description": "Indicates if there were any debug or trace logs detected on this instance in an interval of 5 minutes. As a result it will take at a minimum 5 minutes after you disabled the logs until this flag changes.",
       "format": "none",
@@ -1040,7 +1040,7 @@
     {
       "cacheTimeout": null,
       "content": "\n\n\n\n",
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "gridPos": {
         "h": 3,
         "w": 12,
@@ -1057,7 +1057,7 @@
       "type": "text"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Last reported CPU usage in percent",
       "gridPos": {
         "h": 7,
@@ -1113,7 +1113,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Last reported total memory usage in MiB",
       "gridPos": {
         "h": 7,
@@ -1174,7 +1174,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the number of log entries by their type",
       "gridPos": {
         "h": 7,
@@ -1271,7 +1271,7 @@
     },
     {
       "collapsed": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1289,7 +1289,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the CPU usage in percent",
       "fill": 1,
       "fillGradient": 0,
@@ -1379,7 +1379,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the memory usage in mb",
       "fill": 1,
       "fillGradient": 0,
@@ -1475,7 +1475,7 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the average time in seconds that it takes to process an HTTP request. This includes requests to admin and runtime nodes.",
       "fill": 1,
       "fillGradient": 0,
@@ -1579,7 +1579,7 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the average time in seconds that it takes to process datasource queries. Grouped by datasource type and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -1743,7 +1743,7 @@
     },
     {
       "collapsed": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1761,7 +1761,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the average increase of SSO events per second. Grouped by authentication method and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -1856,7 +1856,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the average increase of login events per second. Grouped by authentication method and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -1952,7 +1952,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the average increase of issued tokens per second. Grouped by token type and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -2047,7 +2047,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "${Cluster}",
       "description": "Shows the average increase of revoked tokens per second. Group by token type and instance.",
       "fill": 1,
       "fillGradient": 0,
@@ -2142,9 +2142,32 @@
   "templating": {
     "list": [
       {
+        "current": {
+          "selected": false,
+          "text": "Prometheus",
+          "value": "Prometheus"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "Cluster",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "tagsQuery": "",
+        "type": "datasource"
+      },
+      {
         "allValue": null,
-        "current": {},
-        "datasource": "${DS_PROMETHEUS}",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "${Cluster}",
         "definition": "label_values(idsvr_cpu_usage, instance)",
         "hide": 0,
         "includeAll": true,
@@ -2169,7 +2192,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "${Cluster}",
         "definition": "label_values(idsvr_cpu_usage, instance)",
         "hide": 2,
         "includeAll": true,
@@ -2211,5 +2234,5 @@
   "timezone": "",
   "title": "Curity Identity Server",
   "uid": "pPzcnF-Zk",
-  "version": 1
+  "version": 2
 }
