@@ -2034,6 +2034,70 @@
       "yaxis": {
         "align": false
       }
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${Cluster}"
+      },
+      "description": "Shows the absolute number of logins for an authenticator and instance during the given interval",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "green",
+            "mode": "fixed"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 0,
+        "y": 50
+      },
+      "id": 79,
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "9.1.5",
+      "targets": [
+        {
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "increase(idsvr_authentication_login_total{instance=\"$Instance\"}[$__rate_interval])",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "{{acr}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Login Count",
+      "type": "bargauge"
     }
   ],
   "refresh": "5s",
