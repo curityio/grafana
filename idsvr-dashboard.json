@@ -1173,7 +1173,7 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "$__rate_interval"
               ],
               "type": "time"
             },
@@ -1464,7 +1464,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(idsvr_http_server_request_time_sum{instance=~\"$Instance\"}[$__interval])/rate(idsvr_http_server_request_time_count{instance=~\"$Instance\"}[$__interval])",
+          "expr": "rate(idsvr_http_server_request_time_sum{instance=~\"$Instance\"}[$__rate_interval])/rate(idsvr_http_server_request_time_count{instance=~\"$Instance\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "HTTP requests@{{instance}}",
           "refId": "A"
@@ -1559,70 +1559,70 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_account_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_account_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_account_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_account_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "account@{{instance}}",
           "refId": "B"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_attribute_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_attribute_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_attribute_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_attribute_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "attribute@{{instance}}",
           "refId": "A"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_bucket_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_bucket_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_bucket_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_bucket_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "bucket@{{instance}}",
           "refId": "C"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_credential_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_credential_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_credential_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_credential_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "credential@{{instance}}",
           "refId": "D"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_dcr_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_dcr_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_dcr_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_dcr_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "DCR@{{instance}}",
           "refId": "E"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_delegation_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_delegation_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_delegation_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_delegation_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "delegation@{{instance}}",
           "refId": "F"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_device_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_device_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_device_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_device_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "device@{{instance}}",
           "refId": "G"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_nonce_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_nonce_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_nonce_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_nonce_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "nonce@{{instance}}",
           "refId": "H"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_session_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_session_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_session_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_session_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "session@{{instance}}",
           "refId": "I"
         },
         {
-          "expr": "sum by (dap_id) (rate(idsvr_datasource_token_sum{instance=~\"$Instance\"}[$__interval])) / sum by (dap_id) (rate(idsvr_datasource_token_count{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (dap_id) (rate(idsvr_datasource_token_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_token_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "token@{{instance}}",
@@ -1736,7 +1736,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(idsvr_authentication_sso_total{instance=~\"$Instance\"}[$__interval])",
+          "expr": "rate(idsvr_authentication_sso_total{instance=~\"$Instance\"}[$__rate_interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1824,7 +1824,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(idsvr_authentication_login_total{instance=~\"$Instance\"}[$__interval])",
+          "expr": "rate(idsvr_authentication_login_total{instance=~\"$Instance\"}[$__rate_interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1911,7 +1911,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_issued_total{instance=~\"$Instance\"}[$__interval]))",
+          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_issued_total{instance=~\"$Instance\"}[$__rate_interval]))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -1998,7 +1998,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_revoked_total{instance=\"$Instance\"}[$__interval]))",
+          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_revoked_total{instance=\"$Instance\"}[$__rate_interval]))",
           "legendFormat": "{{token_type}} token@{{instance}}",
           "refId": "B"
         }
