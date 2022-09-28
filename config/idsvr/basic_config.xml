@@ -355,12 +355,13 @@
           <connection-string>jdbc:postgresql://database:5432/idsvr</connection-string>
           <connection-timeout>30000</connection-timeout>
           <driver>org.postgresql.Driver</driver>
+          <enable-pool-metrics>true</enable-pool-metrics>
           <idle-timeout>600000</idle-timeout>
           <max-lifetime>1800000</max-lifetime>
           <max-pool-size>20</max-pool-size>
           <min-idle-pool-size>10</min-idle-pool-size>
-          <password>Password1</password>
-          <username>postgres</username>
+          <password>#{POSTGRES_PASSWORD}</password>
+          <username>#{POSTGRES_USER}</username>
         </jdbc>
       </data-source>
     </data-sources>

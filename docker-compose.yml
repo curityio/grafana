@@ -3,7 +3,9 @@ services:
   curity:
     container_name: idsvr
     environment:
-      PASSWORD: Password1
+      PASSWORD: "Password1"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "Password1"
     image: curity.azurecr.io/curity/idsvr:latest
     ports:
       - "6749:6749"
@@ -29,9 +31,9 @@ services:
       - ./config/postgresql/data:/var/lib/postgresql/data
       - ./config/postgresql/create-database.sql:/docker-entrypoint-initdb.d/create-database.sql
     environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'Password1'
-      POSTGRES_DB: 'idsvr'
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "Password1"
+      POSTGRES_DB: "idsvr"
     networks:
       demonetwork:
         aliases:
