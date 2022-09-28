@@ -2298,7 +2298,7 @@
             "uid": "${Cluster}"
           },
           "editorMode": "code",
-          "expr": "rate(idsvr_datasource_jdbc_pool_active_connections{instance=~\"$Instance\"}[$__rate_interval]) /rate( idsvr_datasource_jdbc_pool_connections{instance=~\"$Instance\"}[$__rate_interval])",
+          "expr": "idsvr_datasource_jdbc_pool_active_connections{instance=~\"$Instance\"} / idsvr_datasource_jdbc_pool_connections{instance=~\"$Instance\"}",
           "legendFormat": "{{ds_id}}@{{instance}}",
           "range": true,
           "refId": "A"
