@@ -3,16 +3,39 @@ services:
   curity:
     container_name: idsvr
     environment:
-      PASSWORD: Secr3t
+      PASSWORD: Password1
     image: curity.azurecr.io/curity/idsvr:latest
     ports:
       - "6749:6749"
       - "4466:4466"
       - "8443:8443"
+    volumes:
+      - ./config/idsvr/license.json:/opt/idsvr/etc/init/license/license.json
+      - ./config/idsvr/basic_config.xml:/opt/idsvr/etc/init/basic_config.xml
+      - ./config/idsvr/example_config.xml:/opt/idsvr/etc/init/example_config.xml
+    links:
+      - curity-data
     networks:
       demonetwork:
         aliases:
           - idsvr
+
+  curity-data:
+    container_name: database
+    image: postgres:14.5
+    ports:
+     - 5432:5432
+    volumes:
+      - ./config/postgresql/data:/var/lib/postgresql/data
+      - ./config/postgresql/create-database.sql:/docker-entrypoint-initdb.d/create-database.sql
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'Password1'
+      POSTGRES_DB: 'idsvr'
+    networks:
+      demonetwork:
+        aliases:
+          - database
 
   prometheus:
     container_name: prometheus
@@ -20,9 +43,9 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - type: bind
-        source: ./config/prometheus/prometheus.yml
-        target: /etc/prometheus/prometheus.yml
+      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    links:
+      - curity
     networks:
       demonetwork:
         aliases:
@@ -30,14 +53,19 @@ services:
 
   grafana:
     container_name: grafana
-    image: grafana/grafana
+    image: grafana/grafana-oss
     ports:
       - "3000:3000"
+    environment:
+      - GF_PATHS_CONFIG=/etc/grafana/custom.ini
     volumes:
+      - ./config/grafana/custom.ini:/etc/grafana/custom.ini
       - ./config/grafana/provisioning/:/etc/grafana/provisioning/
       - type: bind
         source: ./config/grafana/dashboard.json
         target: /var/lib/grafana/dashboards/curity/idsvr-dashboard.json
+    links:
+      - prometheus
     networks:
       demonetwork:
         aliases:

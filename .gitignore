@@ -1,0 +1,3 @@
+config/postgresql/data/*
+.DS_Store
+config/idsvr/license.json

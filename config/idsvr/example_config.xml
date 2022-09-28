@@ -1,0 +1,126 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <profiles xmlns="https://curity.se/ns/conf/base">
+    <profile>
+      <id>authentication-service</id>
+      <type xmlns:auth="https://curity.se/ns/conf/profile/authentication">auth:authentication-service</type>
+      <settings>
+        <authentication-service xmlns="https://curity.se/ns/conf/profile/authentication">
+          <authenticators>
+            <authenticator>
+              <id>html1</id>
+              <html-form xmlns="https://curity.se/ns/conf/authenticators/html-form">
+                <account-manager>default-account-manager</account-manager>
+                <credential-manager>default-credential-manager</credential-manager>
+              </html-form>
+            </authenticator>
+          </authenticators>
+        </authentication-service>
+      </settings>
+    </profile>
+    <profile>
+      <id>token-service</id>
+      <type xmlns:as="https://curity.se/ns/conf/profile/oauth">as:oauth-service</type>
+      <settings>
+        <authorization-server xmlns="https://curity.se/ns/conf/profile/oauth">
+          <scopes>
+            <scope>
+              <id>admin</id>
+              <description>A scope that is only available to back-end services</description>
+            </scope>
+          </scopes>
+          <client-store>
+            <config-backed>
+              <client>
+                <id>dynamic-client-template</id>
+                <description>A client that functions as a template for dynamic client. Before a client can dynamically register, a user must authenticate using the www client (which isn't a dynamic one and isn't a template).</description>
+                <redirect-uris>https://localhost:8000/cb</redirect-uris>
+                <scope>openid</scope>
+                <user-authentication/>
+                <capabilities>
+                  <code/>
+                </capabilities>
+                <dynamic-client-registration-template>
+                  <authenticate-user-by>www</authenticate-user-by>
+                </dynamic-client-registration-template>
+              </client>
+              <client>
+                <id>gateway-client</id>
+                <description>An API gateway or reverse proxy client that can convert phantom tokens to internal JWT tokens</description>
+                <secret>Password1</secret>
+                <capabilities>
+                  <introspection/>
+                </capabilities>
+              </client>
+              <client>
+                <id>server-client</id>
+                <description>Server-based client that needs a token to call some back-end API</description>
+                <secret>Password1</secret>
+                <scope>admin</scope>
+                <capabilities>
+                  <client-credentials/>
+                </capabilities>
+              </client>
+              <client>
+                <id>www</id>
+                <description>A web client that can do all of the Web-based flows. If one of the flows is done using the dcr scope, the resulting access token can be used to dynamically register clients using the dynamic-client-template client as well.</description>
+                <secret>Password1</secret>
+                <redirect-uris>https://localhost:8080/cb</redirect-uris>
+                <scope>openid</scope>
+                <scope>address</scope>
+                <scope>email</scope>
+                <scope>phone</scope>
+                <scope>profile</scope>
+                <capabilities>
+                  <code/>
+                  <implicit/>
+                </capabilities>
+                <user-authentication/>
+              </client>
+              <client>
+                <id>client-assisted-example</id>
+                <capabilities>
+                  <assisted-token/>
+                </capabilities>
+                <user-authentication/>
+                <allowed-origins>*</allowed-origins>
+              </client>
+            </config-backed>
+          </client-store>
+          <dynamic-client-registration>
+            <client-data-source>default-datasource</client-data-source>
+            <templatized/>
+          </dynamic-client-registration>
+        </authorization-server>
+      </settings>
+      <endpoints>
+        <endpoint>
+          <id>token-service-token</id>
+          <token-endpoint-procedures>
+            <flow>oauth-token-client-credentials</flow>
+            <procedure>issue-access-token-as-jwt</procedure>
+          </token-endpoint-procedures>
+        </endpoint>
+      </endpoints>
+      <token-issuers>
+        <custom-token-issuer>
+          <id>custom-access-token-issuer</id>
+          <issuer-type>jwt</issuer-type>
+          <purpose-type>access_token</purpose-type>
+          <jwt>
+            <signing-key-id>default-signing-key</signing-key-id>
+            <verification-keystore-id>default-signature-verification-key</verification-keystore-id>
+          </jwt>
+        </custom-token-issuer>
+      </token-issuers>
+    </profile>
+  </profiles>
+  <processing xmlns="https://curity.se/ns/conf/base">
+  <procedures>
+    <token-procedure>
+      <id>issue-access-token-as-jwt</id>
+      <flow>oauth-token-client-credentials</flow>
+      <script>ZnVuY3Rpb24gcmVzdWx0KGNvbnRleHQpIHsKICAgIHZhciBkZWxlZ2F0aW9uRGF0YSA9IGNvbnRleHQuZ2V0RGVmYXVsdERlbGVnYXRpb25EYXRhKCk7CiAgICB2YXIgaXNzdWVkRGVsZWdhdGlvbiA9IGNvbnRleHQuZGVsZWdhdGlvbklzc3Vlci5pc3N1ZShkZWxlZ2F0aW9uRGF0YSk7CgogICAgdmFyIGFjY2Vzc1Rva2VuRGF0YSA9IGNvbnRleHQuZ2V0RGVmYXVsdEFjY2Vzc1Rva2VuRGF0YSgpOwogICAgCiAgICAvLyBEb24ndCBpc3N1ZSBhIHJlZiB0b2tlbiB1c2luZyB0aGUgZGVmYXVsdCB0b2tlbiBpc3N1ZXIuIEluc3RlYWQsIHVzZSB0aGUKICAgIC8vIEpXVCBpc3N1ZXIgdG8gZ2l2ZSBiYWNrLWVuZCBzZXJ2ZXIgY2xpZW50cyBhIEpXVCBpbW1lZGlhdGVseS4KICAgIHZhciBpc3N1ZWRBY2Nlc3NUb2tlbiA9IGNvbnRleHQuZ2V0QWNjZXNzVG9rZW5Jc3N1ZXIoCiAgICAgICAgICAgICJjdXN0b20tYWNjZXNzLXRva2VuLWlzc3VlciIpLmlzc3VlKGFjY2Vzc1Rva2VuRGF0YSwgaXNzdWVkRGVsZWdhdGlvbik7CgogICAgcmV0dXJuIHsKICAgICAgICBzY29wZTogYWNjZXNzVG9rZW5EYXRhLnNjb3BlLAogICAgICAgIGFjY2Vzc190b2tlbjogaXNzdWVkQWNjZXNzVG9rZW4sCiAgICAgICAgdG9rZW5fdHlwZTogJ2JlYXJlcicsCiAgICAgICAgZXhwaXJlc19pbjogc2Vjb25kc1VudGlsKGFjY2Vzc1Rva2VuRGF0YS5leHApCiAgICB9Owp9</script>
+    </token-procedure>
+  </procedures>
+  </processing>
+</config>
