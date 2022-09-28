@@ -158,10 +158,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.5",
+      "pluginVersion": "9.1.6",
       "repeatDirection": "v",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${Cluster}"
+          },
+          "editorMode": "code",
           "expr": "sum(increase(idsvr_authentication_login_total[$__range]))",
           "instant": true,
           "legendFormat": "{{acr}}",
@@ -234,7 +239,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.5",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "expr": "sum(increase(idsvr_authentication_sso_total[$__range]))",
@@ -309,7 +314,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.5",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "expr": "sum(increase(idsvr_oauth_token_issued_total[$__range]))",
@@ -384,7 +389,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.5",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "expr": "sum(increase(idsvr_oauth_introspection_denied_total[$__range]))",
@@ -474,11 +479,13 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.5",
+      "pluginVersion": "9.1.6",
       "repeatDirection": "v",
       "targets": [
         {
-          "expr": "min(up{instance=~\"$idsvr_instances\"})",
+          "editorMode": "code",
+          "expr": "min(up{job=~\"$idsvr_job\"})",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -563,13 +570,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.5",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
-          "expr": "sum(log4j2_appender_total{level=~\"error|fatal\", instance=~\"$idsvr_instances\"})",
+          "editorMode": "code",
+          "expr": "sum(log4j2_appender_total{level=~\"error|fatal\", job=~\"$idsvr_job\"})",
           "format": "time_series",
           "hide": false,
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -654,12 +663,14 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.5",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
-          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\", instance=~\"$idsvr_instances\"}[5m])))",
+          "editorMode": "code",
+          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\", job=~\"$idsvr_job\"}[5m])))",
           "format": "time_series",
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -2612,15 +2623,16 @@
           "type": "prometheus",
           "uid": "${Cluster}"
         },
-        "definition": "label_values(idsvr_cpu_usage, instance)",
+        "definition": "label_values(idsvr_cpu_usage, job)",
+        "description": "The job configured in Prometheus for scraping the Curity Identity Server",
         "hide": 2,
-        "includeAll": true,
-        "multi": true,
-        "name": "idsvr_instances",
+        "includeAll": false,
+        "multi": false,
+        "name": "idsvr_job",
         "options": [],
         "query": {
-          "query": "label_values(idsvr_cpu_usage, instance)",
-          "refId": "Cluster-idsvr_instances-Variable-Query"
+          "query": "label_values(idsvr_cpu_usage, job)",
+          "refId": "StandardVariableQuery"
         },
         "refresh": 1,
         "regex": "",
