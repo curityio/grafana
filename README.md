@@ -32,7 +32,8 @@ If you just want to review the dashboard, consider to set up your environment us
 docker-compose up
 ```
 
-This will set up three containers with the necessary ports forwarded for each system:
+This will set up the following containers with the necessary ports forwarded where required:
+
 * idsvr
 * database
 * prometheus
