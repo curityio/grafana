@@ -2185,7 +2185,7 @@
         {
           "editorMode": "code",
           "exemplar": false,
-          "expr": "increase(idsvr_authentication_login_total{instance=\"$Instance\"}[$__rate_interval])",
+          "expr": "increase(idsvr_authentication_login_total{instance=~\"$Instance\"}[$__rate_interval])",
           "format": "time_series",
           "instant": true,
           "interval": "",
