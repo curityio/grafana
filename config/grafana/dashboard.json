@@ -1570,7 +1570,7 @@
       },
       "targets": [
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_account_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_account_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_account_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_account_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "account@{{instance}}",
@@ -1578,7 +1578,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_attribute_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_attribute_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_attribute_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_attribute_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "attribute@{{instance}}",
@@ -1586,7 +1586,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_bucket_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_bucket_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_bucket_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_bucket_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "bucket@{{instance}}",
@@ -1594,7 +1594,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_credential_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_credential_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_credential_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_credential_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "credential@{{instance}}",
@@ -1604,7 +1604,7 @@
           "exemplar": false
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_dcr_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_dcr_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_dcr_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_dcr_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "DCR@{{instance}}",
@@ -1612,7 +1612,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_delegation_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_delegation_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_delegation_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_delegation_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "delegation@{{instance}}",
@@ -1620,7 +1620,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_device_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_device_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_device_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_device_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "device@{{instance}}",
@@ -1628,7 +1628,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_nonce_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_nonce_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_nonce_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_nonce_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "nonce@{{instance}}",
@@ -1636,7 +1636,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_session_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_session_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_session_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_session_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "session@{{instance}}",
@@ -1644,7 +1644,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_token_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_token_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_token_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_token_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "token@{{instance}}",
