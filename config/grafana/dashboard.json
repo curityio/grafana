@@ -17,7 +17,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.1.5"
+      "version": "9.1.6"
     },
     {
       "type": "panel",
@@ -626,10 +626,6 @@
                 "value": null
               },
               {
-                "color": "#FF9830",
-                "value": 1
-              },
-              {
                 "color": "#F2495C",
                 "value": 1
               }
@@ -667,7 +663,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "ceil(sum(rate(log4j2_appender_total{level=~\"debug|trace\", job=~\"$idsvr_job\"}[5m])))",
+          "expr": "ceil(sum(increase(log4j2_appender_total{level=~\"debug|trace\", job=~\"$idsvr_job\"}[5m])))",
           "format": "time_series",
           "legendFormat": "",
           "range": true,
@@ -1574,7 +1570,7 @@
       },
       "targets": [
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_account_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_account_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_account_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_account_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "account@{{instance}}",
@@ -1582,7 +1578,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_attribute_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_attribute_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_attribute_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_attribute_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "attribute@{{instance}}",
@@ -1590,7 +1586,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_bucket_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_bucket_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_bucket_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_bucket_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "bucket@{{instance}}",
@@ -1598,7 +1594,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_credential_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_credential_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_credential_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_credential_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "credential@{{instance}}",
@@ -1608,7 +1604,7 @@
           "exemplar": false
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_dcr_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_dcr_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_dcr_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_dcr_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "DCR@{{instance}}",
@@ -1616,7 +1612,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_delegation_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_delegation_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_delegation_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_delegation_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "delegation@{{instance}}",
@@ -1624,7 +1620,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_device_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_device_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_device_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_device_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "device@{{instance}}",
@@ -1632,7 +1628,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_nonce_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_nonce_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_nonce_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_nonce_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "nonce@{{instance}}",
@@ -1640,7 +1636,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_session_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_session_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_session_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_session_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "session@{{instance}}",
@@ -1648,7 +1644,7 @@
           "editorMode": "code"
         },
         {
-          "expr": "sum by (dap_id, instance) (rate(idsvr_datasource_token_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (dap_id) (rate(idsvr_datasource_token_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (ds_id, instance) (rate(idsvr_datasource_token_sum{instance=~\"$Instance\"}[$__rate_interval])) / sum by (ds_id, instance) (rate(idsvr_datasource_token_count{instance=~\"$Instance\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "legendFormat": "token@{{instance}}",
@@ -2069,7 +2065,7 @@
       },
       "targets": [
         {
-          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_revoked_total{instance=\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_revoked_total{instance=~\"$Instance\"}[$__rate_interval]))",
           "legendFormat": "{{token_type}} token@{{instance}}",
           "refId": "B"
         }
@@ -2189,7 +2185,7 @@
           "format": "time_series",
           "instant": true,
           "interval": "",
-          "legendFormat": "{{acr}}",
+          "legendFormat": "{{acr}}@{{instance}}",
           "range": false,
           "refId": "A"
         }
