@@ -1423,12 +1423,12 @@
       },
       "targets": [
         {
-          "expr": "idsvr_jvm_memory_used{instance=~\"$Instance\"}",
+          "expr": "sum by (memory_area, instance) (idsvr_jvm_memory_used{instance=~\"$Instance\"})",
           "format": "time_series",
           "hide": false,
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{memory_area}} {{memory_id}}@{{instance}}",
+          "legendFormat": "{{memory_area}}@{{instance}}",
           "refId": "A"
         }
       ],
