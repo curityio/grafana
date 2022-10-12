@@ -1745,7 +1745,7 @@
         "uid": "${Cluster}"
       },
       "interval": "1m",
-      "description": "Shows the average increase of SSO events per second. Grouped by authentication method and instance.",
+      "description": "Shows the average increase of SSO events per second. Grouped by authentication method.",
       "options": {
         "tooltip": {
           "mode": "single",
@@ -1763,12 +1763,12 @@
       },
       "targets": [
         {
-          "expr": "rate(idsvr_authentication_sso_total{instance=~\"$Instance\"}[$__rate_interval])",
+          "expr": "sum by (acr) (rate(idsvr_authentication_sso_total{instance=~\"$Instance\"}[$__rate_interval]))",
           "format": "time_series",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{acr}}@{{instance}}",
+          "legendFormat": "{{acr}}",
           "refId": "A"
         }
       ],
@@ -1846,7 +1846,7 @@
         "uid": "${Cluster}"
       },
       "interval": "1m",
-      "description": "Shows the average increase of login events per second. Grouped by authentication method and instance.",
+      "description": "Shows the average increase of login events per second. Grouped by authentication method.",
       "options": {
         "tooltip": {
           "mode": "single",
@@ -1864,12 +1864,12 @@
       },
       "targets": [
         {
-          "expr": "rate(idsvr_authentication_login_total{instance=~\"$Instance\"}[$__rate_interval])",
+          "expr": "sum by (acr) (rate(idsvr_authentication_login_total{instance=~\"$Instance\"}[$__rate_interval]))",
           "format": "time_series",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{acr}}@{{instance}}",
+          "legendFormat": "{{acr}}",
           "refId": "A"
         }
       ],
@@ -1947,7 +1947,7 @@
         "uid": "${Cluster}"
       },
       "interval": "1m",
-      "description": "Shows the average increase of issued tokens per second. Grouped by token type and instance.",
+      "description": "Shows the average increase of issued tokens per second. Grouped by token type.",
       "options": {
         "tooltip": {
           "mode": "single",
@@ -1965,11 +1965,11 @@
       },
       "targets": [
         {
-          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_issued_total{instance=~\"$Instance\"}[$__rate_interval]))",
+          "expr": "sum by (token_type) (rate(idsvr_oauth_token_issued_total{instance=~\"$Instance\"}[$__rate_interval]))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
-          "legendFormat": "{{token_type}} token@{{instance}}",
+          "legendFormat": "{{token_type}} token",
           "refId": "A"
         }
       ],
@@ -2047,7 +2047,7 @@
         "uid": "${Cluster}"
       },
       "interval": "1m",
-      "description": "Shows the average increase of revoked tokens per second. Group by token type and instance.",
+      "description": "Shows the average increase of revoked tokens per second. Group by token type.",
       "options": {
         "tooltip": {
           "mode": "single",
@@ -2065,8 +2065,8 @@
       },
       "targets": [
         {
-          "expr": "sum by (token_type, instance) (rate(idsvr_oauth_token_revoked_total{instance=~\"$Instance\"}[$__rate_interval]))",
-          "legendFormat": "{{token_type}} token@{{instance}}",
+          "expr": "sum by (token_type) (rate(idsvr_oauth_token_revoked_total{instance=~\"$Instance\"}[$__rate_interval]))",
+          "legendFormat": "{{token_type}} token",
           "refId": "B"
         }
       ],
@@ -2181,11 +2181,11 @@
         {
           "editorMode": "code",
           "exemplar": false,
-          "expr": "increase(idsvr_authentication_login_total{instance=~\"$Instance\"}[$__rate_interval])",
+          "expr": "sum by (acr) (increase(idsvr_authentication_login_total{instance=~\"$Instance\"}[$__rate_interval]))",
           "format": "time_series",
           "instant": true,
           "interval": "",
-          "legendFormat": "{{acr}}@{{instance}}",
+          "legendFormat": "{{acr}}",
           "range": false,
           "refId": "A"
         }
@@ -2294,8 +2294,8 @@
             "uid": "${Cluster}"
           },
           "editorMode": "code",
-          "expr": "idsvr_datasource_jdbc_pool_active_connections{instance=~\"$Instance\"} / idsvr_datasource_jdbc_pool_connections{instance=~\"$Instance\"}",
-          "legendFormat": "{{ds_id}}@{{instance}}",
+          "expr": "sum by (ds_id) (idsvr_datasource_jdbc_pool_active_connections{instance=~\"$Instance\"} / idsvr_datasource_jdbc_pool_connections{instance=~\"$Instance\"})",
+          "legendFormat": "{{ds_id}}",
           "range": true,
           "refId": "A"
         }
@@ -2380,8 +2380,8 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "rate(idsvr_datasource_jdbc_pool_connection_usage_sum{instance=~\"$Instance\"}[$__rate_interval])/rate(idsvr_datasource_jdbc_pool_connection_usage_count{instance=~\"$Instance\"}[$__rate_interval])",
-          "legendFormat": "{{ds_id}}@{{instance}}",
+          "expr": "sum by (ds_id) (rate(idsvr_datasource_jdbc_pool_connection_usage_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_jdbc_pool_connection_usage_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "legendFormat": "{{ds_id}}",
           "range": true,
           "refId": "A"
         }
@@ -2472,10 +2472,10 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "idsvr_datasource_jdbc_pool_pending_threads{instance=~\"$Instance\"}",
+          "expr": "sum by (ds_id) (idsvr_datasource_jdbc_pool_pending_threads{instance=~\"$Instance\"})",
           "hide": false,
           "instant": false,
-          "legendFormat": "{{ds_id}}@{{instance}}",
+          "legendFormat": "{{ds_id}}",
           "range": true,
           "refId": "A"
         }
@@ -2560,8 +2560,8 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "rate(idsvr_datasource_jdbc_pool_connection_acquired_sum{instance=~\"$Instance\"}[$__rate_interval])/rate(idsvr_datasource_jdbc_pool_connection_acquired_count{instance=~\"$Instance\"}[$__rate_interval])",
-          "legendFormat": "{{ds_id}}@{{instance}}",
+          "expr": "sum by (ds_id) (rate(idsvr_datasource_jdbc_pool_connection_acquired_sum{instance=~\"$Instance\"}[$__rate_interval]) / rate(idsvr_datasource_jdbc_pool_connection_acquired_count{instance=~\"$Instance\"}[$__rate_interval]))",
+          "legendFormat": "{{ds_id}}",
           "range": true,
           "refId": "A"
         }
