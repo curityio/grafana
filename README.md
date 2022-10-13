@@ -16,20 +16,36 @@ Check out [Getting Started with Prometheus](https://prometheus.io/docs/prometheu
 * An instance of Grafana with a data source configured that points to the Prometheus instance above:
 Check out [Getting Started with Grafana](https://grafana.com/docs/grafana/latest/guides/getting_started/)
 
-# The Curity Identity Server Version
+# Version History
 
-Since version 2.0. this dashboard is configured to work with versions of the Curity Identity Server from 7.0. onwards.
-For previous versions of the Curity Identity Server use version 1.0.2 of the dashboard.
+| Version | Changes |
+|---------|---------|
+| 2.0     | Since version 2.0. this dashboard is configured to work with versions of the Curity Identity Server from 7.0. onwards. For previous versions of the Curity Identity Server use version 1.0.2 of the dashboard. |
+| 3.0     | The release includes various fixes and updates. <br/> <ul> <li>Fix template variables</li><li>Fix broken queries</li><li>Use memory areas in Memory panel</li> <li>Use token types and ACR in authentication related panels</li><li>Add counter for logins</li><li>Add JDBC pool metrics</li></ul> The dashboard requires now Grafana 9.6.1 and Curity Identity Server 7.4.0 for JDBC based metrics |
 
-Version 3.0 of this dashboard was updated to include metrics introduces in the Curity Identity Server 7.4.0.
+# Structure and Features
+
+The dashboard has several sections focusing on a cluster-wide overview, instance specific overviews, performance, authentication related metrics and metrics from a JDBC pool. You can use the same dashboards with several clusters and instances
+
+![Screenshot of the Grafana Dashboard](screenshots/screenshot1.png)
+
+Check out the [detailed description of the dashboard](https://curity.io/resources/learn/grafana-dashboard/) for more guidance on the different components and how to use the dashboard.
 
 # Quickstart Guide
+
 If you have an existing installation of the Curity Identity Server, Prometheus and Grafana, just add this dashboard by importing [idsvr-dashboard.json](idsvr-dashboard.json) in Grafana.
 
-If you just want to review the dashboard, consider to set up your environment using Docker. For that purpose configuration files for Prometheus and Grafana as well as a docker-scompose file were added to the repository. It also contains resources necessary to create a database and an instance of the Curity Identity Server that integrates with the database. Using docker-compose you can configure and start the required containers with a single command. Just [download a license](https://developer.curity.io/licenses), and save it in `config/idsvr/license.json`. Then, run the following command inside the repository to create an environment:
+
+# Exploring the Dashboard Using Docker
+
+If you just want to review the dashboard, consider to set up your environment using Docker. For that purpose configuration files for Prometheus and Grafana as well as a docker compose file were added to the repository. It also contains resources necessary to create a database and an instance of the Curity Identity Server that integrates with the database. Using `docker compose` you can configure and start the required containers with a single command.
+
+## Start Containers
+
+Just [download a license](https://developer.curity.io/licenses), and save it in `config/idsvr/license.json`. Then, run the following command inside the repository to create an environment:
 
 ```
-docker-compose up
+docker compose up
 ```
 
 This will set up the following containers with the necessary ports forwarded where required:
@@ -40,6 +56,9 @@ This will set up the following containers with the necessary ports forwarded whe
 * grafana
 
 The containers' names are also the hostnames that are used in configuration files. Docker daemon will handle the name resolution and routing.
+
+## Accessing Endpoints
+
 The systems are preconfigured. Just access Grafana with the default credentials `admin:admin` (see [Grafana Configuration](https://grafana.com/docs/grafana/latest/installation/configuration/#admin-user)).
 
 | Endpoint                       | Description                                                  |
@@ -50,15 +69,11 @@ The systems are preconfigured. Just access Grafana with the default credentials 
 | http://localhost:3000          | Grafana Web UI                                               |
 
 
-## Generate Metrics
-
-Initially, the dashboard is empty. Feel free to explore different [testing methods](https://curity.io/resources/tryit/) to create some traffic and metrics. For example, use [OAuth.tools](https://oauth.tools/) to run some requests and check how the dashboard updates. Walk through the related tutorials [Exposing Curity Using ngrok](https://curity.io/resources/learn/expose-local-curity-ngrok/) and [Test using OAuth Tools](https://curity.io/resources/learn/test-using-oauth-tools/) for more guidance.
-
 For login to the [Admin UI of the Curity Identity Server](https://localhost:6749/admin) use the credentials `admin:Password1`.
 
 ## Teardown
 
-Once you're done with evaluating the dashboard run `docker-compose rm` to remove any created containers.
+Once you're done with evaluating the dashboard run `docker compose rm` to remove any created containers.
 
 # Contributing
 
