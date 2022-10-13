@@ -73,7 +73,7 @@ For login to the [Admin UI of the Curity Identity Server](https://localhost:6749
 
 ## Teardown
 
-Once you're done with evaluating the dashboard run `docker compose rm` to remove any created containers.
+Once you're done with evaluating the dashboard run `docker compose down` to remove any created containers.
 
 # Contributing
 
