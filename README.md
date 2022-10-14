@@ -29,8 +29,6 @@ The dashboard has several sections focusing on a cluster-wide overview, instance
 
 ![Screenshot of the Grafana Dashboard](screenshots/screenshot1.png)
 
-Check out the [detailed description of the dashboard](https://curity.io/resources/learn/grafana-dashboard/) for more guidance on the different components and how to use the dashboard.
-
 # Quickstart Guide
 
 If you have an existing installation of the Curity Identity Server, Prometheus and Grafana, just add this dashboard by importing [idsvr-dashboard.json](idsvr-dashboard.json) in Grafana.
