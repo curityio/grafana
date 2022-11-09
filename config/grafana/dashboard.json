@@ -1444,7 +1444,7 @@
         "y": 25
       },
       "type": "timeseries",
-      "title": "HTTP Timing",
+      "title": "HTTP Server Timing",
       "datasource": {
         "uid": "${Cluster}",
         "type": "prometheus"
