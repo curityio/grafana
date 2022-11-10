@@ -2786,7 +2786,7 @@
         "definition": "label_values(http_client_id)",
         "description": "The ID of an HTTP client",
         "hide": 2,
-        "includeAll": false,
+        "includeAll": true,
         "label": "http_client_id",
         "multi": true,
         "name": "http_client_id",
