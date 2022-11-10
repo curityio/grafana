@@ -2566,6 +2566,143 @@
           "refId": "A"
         }
       ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 71
+      },
+      "id": 96,
+      "panels": [],
+      "title": "HTTP Clients Timing",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${Cluster}"
+      },
+      "description": "Shows the average time in seconds that it takes an HTTP client to get an HTTP response.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 80
+      },
+      "id": 116,
+      "interval": "1m",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.6",
+      "repeat": "http_client_id",
+      "repeatDirection": "h",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${Cluster}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (http_client_id) (rate(idsvr_http_client_request_successful_sum{instance=~\"$Instance\",http_client_id=~\"$http_client_id\"}[$__rate_interval])/rate(idsvr_http_client_request_successful_count{instance=~\"$Instance\",http_client_id=~\"$http_client_id\"}[$__rate_interval]))",
+          "format": "time_series",
+          "legendFormat": "Success Response",
+          "range": true,
+          "refId": "Success"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${Cluster}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (http_client_id) (rate(idsvr_http_client_request_client_error_sum{instance=~\"$Instance\",http_client_id=~\"$http_client_id\"}[$__rate_interval])/rate(idsvr_http_client_request_client_error_count{instance=~\"$Instance\",http_client_id=~\"$http_client_id\"}[$__rate_interval]))",
+          "hide": false,
+          "legendFormat": "4xx Response",
+          "range": true,
+          "refId": "Client Error"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${Cluster}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (http_client_id) (rate(idsvr_http_client_request_server_error_sum{instance=~\"$Instance\",http_client_id=~\"$http_client_id\"}[$__rate_interval])/rate(idsvr_http_client_request_server_error_count{instance=~\"$Instance\",http_client_id=~\"$http_client_id\"}[$__rate_interval]))",
+          "hide": false,
+          "legendFormat": "5xx Response",
+          "range": true,
+          "refId": "Server Error"
+        }
+      ],
+      "title": "${http_client_id}",
+      "type": "timeseries"
     }
   ],
   "refresh": "5s",
@@ -2638,6 +2775,31 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "current": {
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${Cluster}"
+        },
+        "definition": "label_values(http_client_id)",
+        "description": "The ID of an HTTP client",
+        "hide": 2,
+        "includeAll": true,
+        "label": "http_client_id",
+        "multi": true,
+        "name": "http_client_id",
+        "options": [],
+        "query": {
+          "query": "label_values(http_client_id)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
       }
     ]
   },
