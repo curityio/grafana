@@ -22,12 +22,15 @@ Check out [Getting Started with Grafana](https://grafana.com/docs/grafana/latest
 |---------|---------|
 | 2.0     | Since version 2.0. this dashboard is configured to work with versions of the Curity Identity Server from 7.0. onwards. For previous versions of the Curity Identity Server use version 1.0.2 of the dashboard. |
 | 3.0     | The release includes various fixes and updates. <br/> <ul> <li>Fix template variables</li><li>Fix broken queries</li><li>Use memory areas in Memory panel</li> <li>Use token types and ACR in authentication related panels</li><li>Add counter for logins</li><li>Add JDBC pool metrics</li></ul> The dashboard requires now Grafana 9.6.1 and Curity Identity Server 7.4.0 for JDBC based metrics |
+| 3.1     | Added metrics from HTTP clients that are available starting with the Curity Identity Server 7.5.0 |
 
 # Structure and Features
 
-The dashboard has several sections focusing on a cluster-wide overview, instance specific overviews, performance, authentication related metrics and metrics from a JDBC pool. You can use the same dashboards with several clusters and instances
+The dashboard has several sections focusing on a cluster-wide overview, instance specific overviews, performance, authentication related metrics and metrics from a JDBC pool as well as HTTP clients. You can use the same dashboards with several clusters and instances
 
 ![Screenshot of the Grafana Dashboard](screenshots/screenshot1.png)
+
+Check out the [detailed description of the dashboard](https://curity.io/resources/learn/grafana-dashboard/) for more guidance on the different components and how to use the dashboard.
 
 # Quickstart Guide
 
